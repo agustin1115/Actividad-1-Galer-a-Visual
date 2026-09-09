@@ -1,0 +1,215 @@
+/* Barrios en Construcción - hoja de estilos general */
+
+:root {
+  --color-primary: #0288d1;
+  --color-primary-light: #4fc3f7;
+  --color-accent: #ef6c00;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f2f8fb;
+  --color-text: #222222;
+  --color-text-light: #555555;
+  --font-titulos: 'Trebuchet MS', Verdana, sans-serif;
+  --font-texto: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-texto);
+  font-size: 100%;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+}
+
+/* ---------- Encabezado ---------- */
+
+.site-header {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 2em 1em 1.2em 1em;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0 0 0.3em 0;
+  font-family: var(--font-titulos);
+  font-size: 2rem;
+}
+
+.site-header p {
+  margin: 0;
+  font-size: 1rem;
+  color: #e1f5fe;
+}
+
+/* ---------- Navegación ---------- */
+
+.site-nav {
+  background-color: var(--color-primary-light);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list a {
+  display: block;
+  padding: 0.8em 1.2em;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.nav-list a:hover,
+.nav-list a.activo {
+  background-color: var(--color-primary);
+}
+
+/* ---------- Contenido principal ---------- */
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2em 1.2em;
+}
+
+section {
+  margin-bottom: 2.5em;
+}
+
+h2 {
+  font-family: var(--font-titulos);
+  color: var(--color-primary);
+  border-bottom: 3px solid var(--color-primary-light);
+  padding-bottom: 0.3em;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Imagen representativa (index) ---------- */
+
+.hero-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 1em 0;
+}
+
+/* ---------- Tarjetas de elementos (index) ---------- */
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.gallery-card {
+  background-color: var(--color-bg-alt);
+  border-radius: 8px;
+  padding: 1.2em;
+  flex: 1 1 45%;
+  border: 1px solid var(--color-primary-light);
+}
+
+.gallery-card h3 {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* ---------- Grilla de fotos (páginas de elementos) ---------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  border: 3px solid var(--color-primary-light);
+  border-radius: 6px;
+}
+
+/* ---------- Pie de página ---------- */
+
+.site-footer {
+  text-align: center;
+  padding: 1.5em;
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--color-primary-light);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 700px) {
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gallery-card {
+    flex: 1 1 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 1.5em 1em;
+  }
+}
