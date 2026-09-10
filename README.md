@@ -20,21 +20,65 @@ realizadas durante las jornadas de voluntariado.
 
 ## Contenidos incluidos
 
-- **index.html**: página principal con la presentación del tema y acceso a los dos
+- **index.html**: página principal con la presentación del tema y acceso a los tres
   elementos de la galería.
 - **veredas.html**: página dedicada a la jornada de construcción de veredas de acceso
   (encofrado, malla de hierro y colado de cemento).
 - **neumaticos.html**: página dedicada a la jornada de armado de un espacio recreativo
   con neumáticos reciclados.
+- **construccion.html**: página dedicada al registro fotográfico general de las
+  jornadas de construcción junto a TECHO.
 - **css/style.css**: hoja de estilos compartida por todas las páginas del sitio.
 - **img/**: fotografías utilizadas en la galería.
 
-## Decisiones de diseño
+## Mapa del sitio
 
-Se utilizó una paleta de colores basada en el celeste y azul (asociados a TECHO) junto
-con un color de acento naranja/terracota, en referencia a la tierra y los materiales de
-construcción. La tipografía es simple y websafe (Trebuchet MS para títulos y Arial para
-el texto) para priorizar la legibilidad. El sitio mantiene una barra de navegación fija
-en todas las páginas, y utiliza Flexbox para la navegación y las tarjetas de la página
-principal, y CSS Grid para las grillas de fotos. El diseño es responsive, adaptándose a
-pantallas de celular mediante media queries.
+```
+index.html (Inicio)
+├── veredas.html        (Construcción de veredas)
+├── neumaticos.html     (Espacio recreativo)
+└── construccion.html   (Construcción)
+```
+
+Las cuatro páginas comparten el mismo header, barra de navegación y footer, y están
+enlazadas entre sí desde el menú de navegación, marcando con la clase `.activo` la
+página en la que el usuario se encuentra.
+
+## Design System
+
+**Paleta de colores** (definida como variables CSS en `:root`):
+
+| Token | Valor | Uso |
+|---|---|---|
+| `--color-primary` | `#0288d1` | Header, bordes, títulos, estado activo del nav |
+| `--color-primary-light` | `#4fc3f7` | Barra de navegación, bordes de fotos |
+| `--color-accent` | `#ef6c00` | Botones "Ver galería" y hover de enlaces |
+| `--color-bg` / `--color-bg-alt` | `#ffffff` / `#f2f8fb` | Fondo general y fondo de tarjetas |
+| `--color-text` / `--color-text-light` | `#222222` / `#555555` | Texto principal y texto secundario |
+
+Paleta basada en el celeste y azul asociados a TECHO, con un acento naranja/terracota
+que remite a la tierra y los materiales de construcción.
+
+**Tipografía:**
+- Títulos: `--font-titulos` → Trebuchet MS, Verdana, sans-serif
+- Texto: `--font-texto` → Arial, Helvetica, sans-serif
+
+**Componentes reutilizables:**
+- `.site-header` / `.site-nav` / `.site-footer`: encabezado, navegación y pie, iguales
+  en las 4 páginas.
+- `.gallery-card` + `.btn`: tarjetas de presentación de cada elemento en el index.
+- `.gallery-grid`: grilla de fotos (CSS Grid) usada en veredas, neumáticos y
+  construcción.
+- `.hero-img`: imagen destacada de la página principal.
+
+**Layout:** Flexbox para la navegación y las tarjetas del index; CSS Grid para las
+grillas de fotos. Diseño responsive con unidades relativas (`rem`/`em`) y dos media
+queries (700px y 450px) que reordenan el menú y reducen las columnas de la grilla de
+fotos (3 → 2 → 1).
+
+## Uso de IA
+
+Para el desarrollo de este trabajo utilicé **Claude Code** como herramienta de apoyo,
+puntualmente para la corrección de errores en el código (HTML/CSS) y para el
+versionado y manejo de Git/GitHub del proyecto. Las decisiones de contenido, diseño y
+estructura del sitio son propias.
