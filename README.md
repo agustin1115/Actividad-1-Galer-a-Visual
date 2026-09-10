@@ -1,6 +1,6 @@
 # Barrios en Construcción
 
-**Nombre y apellido:** Agustín Seoane
+**Nombre y apellido:** Agustín Díaz Seoane
 
 **Nombre de la galería:** Barrios en Construcción
 
