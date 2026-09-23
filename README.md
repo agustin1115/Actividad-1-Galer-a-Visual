@@ -12,14 +12,18 @@
 
 **Categoría elegida:** Recorridos ciudadanos (proyectos sociales)
 
+**Ubicación:** Barrios populares de la Zona Sur del Gran Buenos Aires (Quilmes, Florencio
+Varela, entre otros), donde TECHO Argentina tiene trabajo sostenido.
+
 **Repositorio:** https://github.com/agustin1115/Actividad-1-Galer-a-Visual
 **Sitio publicado (GitHub Pages):** https://agustin1115.github.io/Actividad-1-Galer-a-Visual/
 
 ## Tema y objetivo
 
-Un recorrido por los distintos tipos de intervención que hace TECHO en asentamientos
-populares de Argentina: de la vivienda de emergencia a la infraestructura comunitaria,
-mostrando cómo cada proyecto suma a mejorar la calidad de vida del barrio.
+Un recorrido por los distintos tipos de intervención que hace TECHO en barrios populares
+de la Zona Sur del Gran Buenos Aires (Quilmes, Florencio Varela, entre otros): de la
+vivienda de emergencia a la infraestructura comunitaria, mostrando cómo cada proyecto suma
+a mejorar la calidad de vida del barrio.
 
 El objetivo es que quien visite el sitio entienda, en cinco pasos, todo lo que hace TECHO
 más allá de construir una casa, y sepa cómo puede sumarse.
@@ -39,27 +43,25 @@ de TECHO.
 |---|---|---|---|
 | 1 | Vivienda de emergencia | Agustín Díaz Seoane | Completo (fotos propias de la Actividad 1) |
 | 2 | Infraestructura comunitaria | Lorenzo Ferrario | Completo (veredas + espacio recreativo, fotos propias) |
-| 3 | Vivienda progresiva | [a asignar] | Guion completo (descripción, info a comunicar, actividades, datos útiles, recomendaciones) — falta reemplazar las imágenes propuestas por fotos propias |
-| 4 | Eventos (Día de la Niñez) | [a asignar] | Guion completo — falta reemplazar las imágenes propuestas por fotos propias |
-| 5 | Colectas (ropa, juguetes, pañales) | [a asignar] | Guion completo — falta reemplazar las imágenes propuestas por fotos propias |
+| 3 | Vivienda progresiva | Felipe Calderón | Completo (guion + fotos propias de una jornada real) |
+| 4 | Eventos (Día de la Niñez) | Nicolás Fernández | Completo (guion + fotos propias de un Día de la Niñez) |
+| 5 | Colectas (ropa, juguetes, pañales) | Lara Srolovich | Completo (guion + fotos propias de una colecta real) |
 
-Los puntos 3, 4 y 5 ya tienen la estructura de guion completa que pide la consigna (descripción,
-información a comunicar, actividades/experiencias, datos útiles, imágenes propuestas y
-recomendaciones para el visitante), redactada en base a información pública de TECHO. Cada
-responsable debe: (a) confirmar/ajustar el contenido con su propia investigación, y (b)
-reemplazar las fotos propuestas por fotos reales de una jornada, evento o colecta.
+Los 5 puntos tienen la estructura de guion completa que pide la consigna (descripción,
+información a comunicar, actividades/experiencias, datos útiles, fotos propias y
+recomendaciones para el visitante).
 
 ## Contenidos incluidos
 
 - **index.html**: página principal, presenta el equipo, el hilo conductor del recorrido y
   el acceso a los 5 puntos de interés.
-- **vivienda-emergencia.html**, **infraestructura-comunitaria.html**: puntos de interés
-  completos, con fotos propias.
-- **vivienda-progresiva.html**, **eventos.html**, **colectas.html**: guion completo,
-  pendientes de fotos propias (ver tabla de responsables arriba).
+- **vivienda-emergencia.html**, **infraestructura-comunitaria.html**, **vivienda-progresiva.html**,
+  **eventos.html**, **colectas.html**: los 5 puntos de interés, completos y con fotos propias.
 - **sumate.html**: cierre del recorrido, con el enlace real de donación/voluntariado de TECHO.
 - **css/style.css**: hoja de estilos compartida por todas las páginas.
-- **img/**: fotografías utilizadas en el recorrido.
+- **js/main.js**: menú móvil (despliega/oculta la navegación al tocar "Menú" en pantallas chicas).
+- **img/**: fotografías e íconos utilizados en el recorrido.
+- **img/mapa-recorrido.svg**: mapa del recorrido (Inicio + 5 puntos de interés + cierre).
 
 ## Mapa del sitio
 
@@ -104,7 +106,6 @@ Actividad 1 (insuficiente, ≈3.9:1).
 - `.gallery-card` + `.btn`: tarjetas de presentación de cada punto de interés en el index.
 - `.gallery-grid` + `.gallery-item` (figure/figcaption): grilla de fotos con información
   debajo de cada imagen.
-- `.badge-completo` / `.badge-proximamente`: estado de cada punto de interés en el index.
 
 **Layout:** Flexbox para la navegación y las tarjetas del index; CSS Grid para las grillas
 de fotos. Diseño responsive con unidades relativas (`rem`/`em`) y dos media queries (700px
