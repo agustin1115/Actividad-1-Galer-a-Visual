@@ -120,6 +120,9 @@ y 450px) que reordenan el menú y reducen las columnas de la grilla de fotos (3 
 - [argentina.techo.org/sumate](https://argentina.techo.org/sumate/)
 - [argentina.techo.org/voluntariado](https://argentina.techo.org/voluntariado/)
 
+Vivienda progresiva (Felipe Calderón): la descripción oficial citada en la página sale de
+`que-hacemos`, y el contacto para coordinar (info.argentina@techo.org) de `voluntariado`.
+
 Eventos y Colectas no tienen una página oficial detallada en el sitio nacional de TECHO:
 para esos dos guiones, la fuente es la experiencia real de quien haya participado.
 
