@@ -2,10 +2,18 @@
 
 **Materia:** Diseño y Desarrollo Web
 **Actividad:** Actividad 2 — Diseño de un Recorrido
-**Grupo N.º:** [completar]
-**Integrantes:** Agustín Díaz Seoane, [Integrante 2], [Integrante 3], [Integrante 4], [Integrante 5]
+**Grupo N.º:** 6
+**Integrantes:**
+- Calderón, Felipe
+- Díaz Seoane, Agustín Edgardo
+- Fernández, Nicolás Esteban
+- Ferrario, Lorenzo
+- Srolovich, Lara
 
 **Categoría elegida:** Recorridos ciudadanos (proyectos sociales)
+
+**Repositorio:** https://github.com/agustin1115/Actividad-1-Galer-a-Visual
+**Sitio publicado (GitHub Pages):** https://agustin1115.github.io/Actividad-1-Galer-a-Visual/
 
 ## Tema y objetivo
 
@@ -27,16 +35,19 @@ de TECHO.
 
 ## Los 5 puntos de interés
 
-| # | Punto de interés | Estado |
-|---|---|---|
-| 1 | Vivienda de emergencia | Completo (fotos propias de la Actividad 1) |
-| 2 | Infraestructura comunitaria | Completo (veredas + espacio recreativo, fotos propias) |
-| 3 | Vivienda progresiva | Próximamente |
-| 4 | Eventos (Día de la Niñez) | Próximamente |
-| 5 | Colectas (ropa, juguetes, pañales) | Próximamente |
+| # | Punto de interés | Responsable | Estado |
+|---|---|---|---|
+| 1 | Vivienda de emergencia | Agustín Díaz Seoane | Completo (fotos propias de la Actividad 1) |
+| 2 | Infraestructura comunitaria | Lorenzo Ferrario | Completo (veredas + espacio recreativo, fotos propias) |
+| 3 | Vivienda progresiva | [a asignar] | Guion completo (descripción, info a comunicar, actividades, datos útiles, recomendaciones) — falta reemplazar las imágenes propuestas por fotos propias |
+| 4 | Eventos (Día de la Niñez) | [a asignar] | Guion completo — falta reemplazar las imágenes propuestas por fotos propias |
+| 5 | Colectas (ropa, juguetes, pañales) | [a asignar] | Guion completo — falta reemplazar las imágenes propuestas por fotos propias |
 
-Los tres puntos "Próximamente" quedan con un texto de referencia hasta que cada integrante
-complete su guion con fotos y contenido propio.
+Los puntos 3, 4 y 5 ya tienen la estructura de guion completa que pide la consigna (descripción,
+información a comunicar, actividades/experiencias, datos útiles, imágenes propuestas y
+recomendaciones para el visitante), redactada en base a información pública de TECHO. Cada
+responsable debe: (a) confirmar/ajustar el contenido con su propia investigación, y (b)
+reemplazar las fotos propuestas por fotos reales de una jornada, evento o colecta.
 
 ## Contenidos incluidos
 
@@ -44,8 +55,8 @@ complete su guion con fotos y contenido propio.
   el acceso a los 5 puntos de interés.
 - **vivienda-emergencia.html**, **infraestructura-comunitaria.html**: puntos de interés
   completos, con fotos propias.
-- **vivienda-progresiva.html**, **eventos.html**, **colectas.html**: puntos de interés en
-  construcción.
+- **vivienda-progresiva.html**, **eventos.html**, **colectas.html**: guion completo,
+  pendientes de fotos propias (ver tabla de responsables arriba).
 - **sumate.html**: cierre del recorrido, con el enlace real de donación/voluntariado de TECHO.
 - **css/style.css**: hoja de estilos compartida por todas las páginas.
 - **img/**: fotografías utilizadas en el recorrido.
