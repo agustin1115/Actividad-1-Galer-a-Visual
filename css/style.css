@@ -36,6 +36,16 @@ body {
   text-align: center;
 }
 
+.site-logo {
+  display: block;
+  height: 32px;
+  width: auto;
+  margin: 0 auto 0.8em auto;
+  background-color: #ffffff;
+  padding: 0.35em 0.7em;
+  border-radius: 6px;
+}
+
 .site-header h1 {
   margin: 0 0 0.3em 0;
   font-family: var(--font-titulos);
@@ -52,6 +62,48 @@ body {
 
 .site-nav {
   background-color: var(--color-primary-light);
+}
+
+.nav-toggle {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-titulos);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.9em 1.2em;
+  cursor: pointer;
+}
+
+.nav-toggle-icon {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: #ffffff;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: #ffffff;
+}
+
+.nav-toggle-icon::before {
+  top: -6px;
+}
+
+.nav-toggle-icon::after {
+  top: 6px;
 }
 
 .nav-list {
@@ -118,6 +170,26 @@ a:hover {
   border-radius: 8px;
   display: block;
   margin: 1em 0;
+}
+
+/* ---------- Mapa del recorrido ---------- */
+
+.mapa-recorrido-scroll {
+  margin: 1em 0;
+}
+
+.mapa-recorrido {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.scroll-hint {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-style: italic;
+  margin: 0 0 0.5em 0;
 }
 
 /* ---------- Tarjetas de elementos (index) ---------- */
@@ -351,9 +423,21 @@ a:hover {
     font-size: 1.5rem;
   }
 
+  .nav-toggle {
+    display: flex;
+  }
+
   .nav-list {
     flex-direction: column;
+    flex-wrap: nowrap;
     text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .nav-list.nav-abierta {
+    max-height: 30em;
   }
 
   .gallery-card {
@@ -371,6 +455,21 @@ a:hover {
 
   .datos-utiles dd {
     margin-bottom: 0.6em;
+  }
+
+  .scroll-hint {
+    display: block;
+  }
+
+  .mapa-recorrido-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 14px;
+  }
+
+  .mapa-recorrido {
+    width: 700px;
+    max-width: none;
   }
 }
 

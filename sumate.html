@@ -9,12 +9,17 @@
 <body>
 
   <header class="site-header">
+    <img class="site-logo" src="logo.png" alt="Logo de TECHO">
     <h1>Techo para Argentina</h1>
     <p>Un recorrido por las intervenciones de TECHO en los barrios populares</p>
   </header>
 
   <nav class="site-nav">
-    <ul class="nav-list">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+      Menú
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <ul class="nav-list" id="nav-list">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="vivienda-emergencia.html">Vivienda de emergencia</a></li>
       <li><a href="infraestructura-comunitaria.html">Infraestructura comunitaria</a></li>
@@ -51,5 +56,6 @@
     <p>Techo para Argentina &middot; Diseño y Desarrollo Web &middot; Actividad 2 - Diseño de un Recorrido</p>
   </footer>
 
+  <script src="js/main.js" defer></script>
 </body>
 </html>

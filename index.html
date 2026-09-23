@@ -11,12 +11,17 @@
 <body>
 
   <header class="site-header">
+    <img class="site-logo" src="logo.png" alt="Logo de TECHO">
     <h1>Techo para Argentina</h1>
     <p>Un recorrido por las intervenciones de TECHO en los barrios populares</p>
   </header>
 
   <nav class="site-nav">
-    <ul class="nav-list">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+      Menú
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <ul class="nav-list" id="nav-list">
       <li><a href="index.html" class="activo">Inicio</a></li>
       <li><a href="vivienda-emergencia.html">Vivienda de emergencia</a></li>
       <li><a href="infraestructura-comunitaria.html">Infraestructura comunitaria</a></li>
@@ -56,6 +61,20 @@
       </p>
       <img class="hero-img" src="img/construccion-01.jpeg"
         alt="Familia y voluntarios de TECHO celebrando la entrega de una vivienda terminada">
+    </section>
+
+    <section>
+      <h2>Mapa del recorrido</h2>
+      <p>
+        Los 5 puntos de interés siguen un mismo hilo conductor: de resolver una urgencia
+        habitacional a sostener el vínculo con el barrio en el tiempo. Así se conectan entre
+        sí, antes de la invitación a sumarse:
+      </p>
+      <p class="scroll-hint">Deslizá para ver el recorrido completo &rarr;</p>
+      <div class="mapa-recorrido-scroll">
+        <img class="mapa-recorrido" src="img/mapa-recorrido.svg"
+          alt="Mapa del recorrido: parte de Inicio (equipo, presentación y este mapa), sigue por los 5 puntos de interés conectados en orden -1. Vivienda de emergencia (la urgencia resuelta), 2. Infraestructura comunitaria (el barrio mejora), 3. Vivienda progresiva (la casa crece), 4. Eventos - Día de la Niñez (el vínculo se sostiene), 5. Colectas (ropa, juguetes, pañales)- y cierra con la invitación a sumarse.">
+      </div>
     </section>
 
     <section>
@@ -115,6 +134,7 @@
     <p>Techo para Argentina &middot; Diseño y Desarrollo Web &middot; Actividad 2 - Diseño de un Recorrido</p>
   </footer>
 
+  <script src="js/main.js" defer></script>
 </body>
 
 </html>
