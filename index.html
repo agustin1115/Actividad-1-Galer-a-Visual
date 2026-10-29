@@ -4,137 +4,329 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Techo para Argentina - Un recorrido por TECHO</title>
+  <meta name="description" content="Recorrido en cinco paradas por las intervenciones de TECHO en barrios populares de la Zona Sur del GBA y la Ciudad de Buenos Aires.">
+  <title>Techo para Argentina · Un recorrido por los barrios donde trabaja TECHO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="bg-white font-texto leading-relaxed text-tinta antialiased">
+  <a href="#contenido"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[1200] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:font-bold focus:text-techo-900">Saltar al contenido</a>
 
-  <header class="site-header">
-    <img class="site-logo" src="logo.png" alt="Logo de TECHO">
-    <h1>Techo para Argentina</h1>
-    <p>Un recorrido por las intervenciones de TECHO en los barrios populares</p>
+  <header class="site-header relative z-[1100] bg-techo-900 text-white shadow-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.png" alt="TECHO" width="147" height="35" class="h-9 w-auto rounded bg-white px-2 py-1">
+        <span class="font-titulos text-lg font-bold leading-tight sm:text-xl">Techo para Argentina</span>
+      </a>
+      <button type="button" class="nav-toggle inline-flex items-center gap-2 rounded border border-white/60 px-3 py-2 font-bold lg:hidden"
+        aria-expanded="false" aria-controls="menu-principal">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        Menú
+      </button>
+    </div>
+    <nav aria-label="Principal" class="border-t border-white/20">
+      <ul id="menu-principal" class="mx-auto hidden max-w-6xl flex-col gap-1 px-4 py-2 text-[0.95rem] lg:flex lg:flex-row lg:flex-wrap lg:justify-center">
+        <li><a href="index.html" aria-current="page"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Inicio</a></li>
+        <li><a href="vivienda-emergencia.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Vivienda de emergencia</a></li>
+        <li><a href="infraestructura-comunitaria.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Infraestructura comunitaria</a></li>
+        <li><a href="vivienda-progresiva.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Vivienda progresiva</a></li>
+        <li><a href="eventos.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Eventos</a></li>
+        <li><a href="colectas.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Colectas</a></li>
+        <li><a href="sumate.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Sumate</a></li>
+        <li><a href="contacto.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav class="site-nav">
-    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
-      Menú
-      <span class="nav-toggle-icon" aria-hidden="true"></span>
-    </button>
-    <ul class="nav-list" id="nav-list">
-      <li><a href="index.html" class="activo">Inicio</a></li>
-      <li><a href="vivienda-emergencia.html">Vivienda de emergencia</a></li>
-      <li><a href="infraestructura-comunitaria.html">Infraestructura comunitaria</a></li>
-      <li><a href="vivienda-progresiva.html">Vivienda progresiva</a></li>
-      <li><a href="eventos.html">Eventos</a></li>
-      <li><a href="colectas.html">Colectas</a></li>
-      <li><a href="sumate.html">Sumate</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <section>
-      <h2>Equipo</h2>
-      <p>Grupo N.º 6</p>
-      <div class="gallery-list">
-        <div class="gallery-card">
-          <p style="margin:0">
-            Calderón, Felipe<br>
-            Díaz Seoane, Agustín Edgardo<br>
-            Fernández, Nicolás Esteban<br>
-            Ferrario, Lorenzo<br>
-            Srolovich, Lara
+  <main id="contenido">
+    <section class="bg-techo-50">
+      <div class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-10 md:grid-cols-2 md:py-16">
+        <div>
+          <p class="font-titulos text-sm font-bold uppercase tracking-wider text-naranja-700">Recorrido ciudadano · Proyectos sociales</p>
+          <h1 class="mt-2 font-titulos text-3xl font-bold leading-tight text-techo-900 sm:text-4xl lg:text-5xl">Un recorrido por los barrios donde trabaja TECHO</h1>
+          <p class="mt-4 text-lg">
+            Cinco paradas, de Florencio Varela a la Ciudad de Buenos Aires, para conocer de cerca cómo se
+            construye una vivienda, cómo mejora un barrio y cómo se sostiene el vínculo con las familias.
+            Y para descubrir de qué manera podés sumarte.
           </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="vivienda-emergencia.html"
+              class="inline-flex items-center gap-2 rounded-md bg-naranja-700 px-5 py-3 font-bold text-white shadow hover:bg-techo-900">
+              Empezar el recorrido
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#mapa-del-recorrido"
+              class="inline-flex items-center gap-2 rounded-md border-2 border-techo-900 bg-white px-5 py-3 font-bold text-techo-900 hover:bg-techo-100">
+              Ver el mapa
+            </a>
+          </div>
+        </div>
+        <figure>
+          <img src="img/construccion-01.jpeg" width="1200" height="900"
+            alt="Familia y voluntarios de TECHO celebrando frente a una vivienda de emergencia recién terminada"
+            class="aspect-[4/3] w-full rounded-xl border-4 border-techo-300 object-cover shadow-lg">
+          <figcaption class="mt-2 text-sm text-tinta-suave">La entrega de una vivienda: así termina la primera parada del recorrido.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-propuesta" class="mx-auto max-w-6xl px-4 py-12">
+      <h2 id="titulo-propuesta" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Más que construir una casa</h2>
+      <p class="mt-4 max-w-3xl">
+        TECHO trabaja junto a las familias de los barrios populares para superar la pobreza y la
+        exclusión. Este sitio nace de jornadas reales de voluntariado (la galería "Barrios en
+        Construcción" de la Actividad 1) y las ordena como un recorrido: cada parada es un lugar y una
+        forma distinta de intervenir en el barrio, contada por quien estuvo ahí.
+      </p>
+      <dl class="mt-6 grid gap-4 md:grid-cols-2">
+        <div class="rounded-xl border border-techo-100 bg-techo-50 p-5">
+          <dt class="font-titulos font-bold text-techo-900">Objetivo</dt>
+          <dd class="mt-1">Que entiendas, en cinco paradas, todo lo que hace TECHO más allá de construir una casa, y sepas cómo sumarte como voluntario o donante.</dd>
+        </div>
+        <div class="rounded-xl border border-techo-100 bg-techo-50 p-5">
+          <dt class="font-titulos font-bold text-techo-900">Para quién es</dt>
+          <dd class="mt-1">Personas que quieren hacer voluntariado o donar, principalmente de 18 a 35 años, aunque no tengan experiencia previa.</dd>
+        </div>
+      </dl>
+
+      <h3 class="mt-10 font-titulos text-xl font-bold text-techo-900">Qué te propone el recorrido</h3>
+      <ul class="mt-4 grid gap-4 sm:grid-cols-3">
+        <li class="rounded-xl border border-techo-100 p-5 shadow-sm">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <p class="mt-3 font-titulos text-lg font-bold">Conocé</p>
+          <p class="mt-1 text-tinta-suave">Cinco lugares y cinco tipos de intervención, con fotos propias y datos concretos de cada jornada.</p>
+        </li>
+        <li class="rounded-xl border border-techo-100 p-5 shadow-sm">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <p class="mt-3 font-titulos text-lg font-bold">Elegí</p>
+          <p class="mt-1 text-tinta-suave">Jornadas de un par de horas o de un fin de semana entero. No hace falta experiencia previa.</p>
+        </li>
+        <li class="rounded-xl border border-techo-100 p-5 shadow-sm">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21 20c0-2.8-1.8-5.1-4.3-5.8"/></svg>
+          <p class="mt-3 font-titulos text-lg font-bold">Sumate</p>
+          <p class="mt-1 text-tinta-suave">Inscribite a una jornada, doná o escribinos: al final del recorrido tenés todas las opciones.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="mapa-del-recorrido" aria-labelledby="titulo-mapa" class="scroll-mt-4 bg-techo-50 py-12">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 id="titulo-mapa" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Mapa del recorrido</h2>
+        <p class="mt-4 max-w-3xl">
+          El orden sugerido arranca donde la urgencia es más visible, una vivienda de emergencia en
+          Florencio Varela, y vuelve hacia la Ciudad pasando por Berazategui, Quilmes y Avellaneda. Cada
+          parada es una jornada distinta: no se recorren todas el mismo día.
+        </p>
+        <div class="mt-6 grid gap-6 lg:grid-cols-5">
+          <div id="mapa-recorrido" data-mapa-recorrido role="region" aria-label="Mapa interactivo con las cinco paradas del recorrido"
+            class="z-0 h-80 rounded-xl border-2 border-techo-300 bg-white sm:h-96 lg:col-span-3 lg:h-[32rem]"></div>
+          <div class="lg:col-span-2">
+            <h3 class="font-titulos text-xl font-bold text-techo-900">Paradas en orden</h3>
+            <ol data-lista-paradas data-total="distancia-total" class="mt-3 space-y-3"></ol>
+            <p class="mt-4 font-bold">Distancia total: <span id="distancia-total">calculando…</span>
+              <span class="text-sm font-normal text-tinta-suave">(en línea recta, aproximada)</span></p>
+            <p class="mt-2 text-sm text-tinta-suave">
+              Las ubicaciones son aproximadas, por localidad. Las jornadas se hacen dentro de barrios
+              populares y la dirección exacta se comparte con quienes se inscriben, para cuidar la
+              privacidad de las familias.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <p><strong>Próximamente:</strong> "Techo para Argentina"</p>
+    <section id="recorrido" aria-labelledby="titulo-paradas" class="mx-auto max-w-6xl scroll-mt-4 px-4 py-12">
+      <h2 id="titulo-paradas" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Las 5 paradas</h2>
+      <ul class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <li>
+          <article class="flex h-full flex-col overflow-hidden rounded-xl border border-techo-100 bg-white shadow-sm transition hover:shadow-md">
+            <img src="img/construccion-06.jpeg" alt="Voluntarios levantando entre varios un panel de la vivienda" loading="lazy" class="aspect-[4/3] w-full object-cover">
+            <div class="flex flex-1 flex-col p-5">
+              <p class="text-sm font-bold uppercase tracking-wide text-naranja-700">Parada 1 · Florencio Varela</p>
+              <h3 class="mt-1 font-titulos text-xl font-bold text-techo-900">Vivienda de emergencia</h3>
+              <p class="mt-2 flex-1">El proyecto insignia: casas de madera de 18 m² construidas en un fin de semana junto a la familia.</p>
+              <p class="mt-3 flex items-center gap-2 text-sm text-tinta-suave">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                Un fin de semana de obra
+              </p>
+              <a href="vivienda-emergencia.html" class="mt-4 inline-flex items-center gap-2 self-start rounded-md bg-naranja-700 px-4 py-2 font-bold text-white hover:bg-techo-900">Ver parada 1</a>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex h-full flex-col overflow-hidden rounded-xl border border-techo-100 bg-white shadow-sm transition hover:shadow-md">
+            <img src="img/vereda-01.jpg" alt="Grupo de voluntarios preparando la base de una vereda con bolsones de arena y piedra" loading="lazy" class="aspect-[4/3] w-full object-cover">
+            <div class="flex flex-1 flex-col p-5">
+              <p class="text-sm font-bold uppercase tracking-wide text-naranja-700">Parada 2 · Berazategui</p>
+              <h3 class="mt-1 font-titulos text-xl font-bold text-techo-900">Infraestructura comunitaria</h3>
+              <p class="mt-2 flex-1">Veredas, caminos y espacios recreativos que se deciden y se construyen junto a los vecinos.</p>
+              <p class="mt-3 flex items-center gap-2 text-sm text-tinta-suave">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                Un día de obra
+              </p>
+              <a href="infraestructura-comunitaria.html" class="mt-4 inline-flex items-center gap-2 self-start rounded-md bg-naranja-700 px-4 py-2 font-bold text-white hover:bg-techo-900">Ver parada 2</a>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex h-full flex-col overflow-hidden rounded-xl border border-techo-100 bg-white shadow-sm transition hover:shadow-md">
+            <img src="img/vivienda-progresiva-3.jpeg" alt="Pared de ladrillo en obra junto a una pared ya terminada de la misma vivienda" loading="lazy" class="aspect-[4/3] w-full object-cover">
+            <div class="flex flex-1 flex-col p-5">
+              <p class="text-sm font-bold uppercase tracking-wide text-naranja-700">Parada 3 · Quilmes</p>
+              <h3 class="mt-1 font-titulos text-xl font-bold text-techo-900">Vivienda progresiva</h3>
+              <p class="mt-2 flex-1">Una casa pensada para crecer: arranca en 18 m² y la familia la amplía con el tiempo.</p>
+              <p class="mt-3 flex items-center gap-2 text-sm text-tinta-suave">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                Un día de obra
+              </p>
+              <a href="vivienda-progresiva.html" class="mt-4 inline-flex items-center gap-2 self-start rounded-md bg-naranja-700 px-4 py-2 font-bold text-white hover:bg-techo-900">Ver parada 3</a>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex h-full flex-col overflow-hidden rounded-xl border border-techo-100 bg-white shadow-sm transition hover:shadow-md">
+            <img src="img/evento-dia-nino-1.jpeg" alt="Chicos y chicas sentados en una plaza escuchando a un voluntario con un aro" loading="lazy" class="aspect-[4/3] w-full object-cover">
+            <div class="flex flex-1 flex-col p-5">
+              <p class="text-sm font-bold uppercase tracking-wide text-naranja-700">Parada 4 · Avellaneda</p>
+              <h3 class="mt-1 font-titulos text-xl font-bold text-techo-900">Eventos: Día de la Niñez</h3>
+              <p class="mt-2 flex-1">Una tarde de juegos, talleres y meriendas para las infancias del barrio, más allá de las obras.</p>
+              <p class="mt-3 flex items-center gap-2 text-sm text-tinta-suave">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                Media jornada (4 horas)
+              </p>
+              <a href="eventos.html" class="mt-4 inline-flex items-center gap-2 self-start rounded-md bg-naranja-700 px-4 py-2 font-bold text-white hover:bg-techo-900">Ver parada 4</a>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex h-full flex-col overflow-hidden rounded-xl border border-techo-100 bg-white shadow-sm transition hover:shadow-md">
+            <img src="img/colecta-6.jpeg" alt="Voluntarios envolviendo juguetes donados con papel plateado" loading="lazy" class="aspect-[4/3] w-full object-cover">
+            <div class="flex flex-1 flex-col p-5">
+              <p class="text-sm font-bold uppercase tracking-wide text-naranja-700">Parada 5 · Ciudad de Buenos Aires</p>
+              <h3 class="mt-1 font-titulos text-xl font-bold text-techo-900">Colectas solidarias</h3>
+              <p class="mt-2 flex-1">Ropa, juguetes, pañales y útiles que se recolectan, se clasifican y se entregan en el barrio.</p>
+              <p class="mt-3 flex items-center gap-2 text-sm text-tinta-suave">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                De unos minutos a 3 horas
+              </p>
+              <a href="colectas.html" class="mt-4 inline-flex items-center gap-2 self-start rounded-md bg-naranja-700 px-4 py-2 font-bold text-white hover:bg-techo-900">Ver parada 5</a>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex h-full flex-col justify-center rounded-xl bg-techo-900 p-6 text-white shadow-sm">
+            <p class="text-sm font-bold uppercase tracking-wide text-techo-100">Cierre del recorrido</p>
+            <h3 class="mt-1 font-titulos text-2xl font-bold">¿Te sumás?</h3>
+            <p class="mt-2">Inscribite a una jornada, calculá tu aporte y elegí la fecha que te quede mejor.</p>
+            <a href="sumate.html" class="mt-4 inline-flex items-center gap-2 self-start rounded-md bg-white px-4 py-2 font-bold text-techo-900 hover:bg-techo-100">Ir a Sumate</a>
+          </article>
+        </li>
+      </ul>
     </section>
 
-    <section>
-      <h2>Presentación del recorrido</h2>
-      <p>
-        Este recorrido nace del trabajo individual de la Actividad 1 ("Barrios en Construcción"),
-        documentando jornadas reales de voluntariado junto a TECHO. Ahora lo ampliamos en grupo
-        para mostrar, en un solo sitio, los distintos tipos de intervención que hace TECHO en
-        barrios populares de la Zona Sur del Gran Buenos Aires &mdash;Quilmes, Florencio Varela,
-        entre otros&mdash;: de la vivienda de emergencia a la infraestructura comunitaria,
-        pasando por la vivienda progresiva, los eventos y las colectas. Cada punto de interés
-        muestra cómo esa intervención suma a mejorar la calidad de vida del barrio.
-      </p>
-      <img class="hero-img" src="img/construccion-01.jpeg"
-        alt="Familia y voluntarios de TECHO celebrando la entrega de una vivienda terminada">
-    </section>
-
-    <section>
-      <h2>Mapa del recorrido</h2>
-      <p>
-        Los 5 puntos de interés siguen un mismo hilo conductor: de resolver una urgencia
-        habitacional a sostener el vínculo con el barrio en el tiempo. Así se conectan entre
-        sí, antes de la invitación a sumarse:
-      </p>
-      <p class="scroll-hint">Deslizá para ver el recorrido completo &rarr;</p>
-      <div class="mapa-recorrido-scroll">
-        <img class="mapa-recorrido" src="img/mapa-recorrido.svg"
-          alt="Mapa del recorrido: parte de Inicio (equipo, presentación y este mapa), sigue por los 5 puntos de interés conectados en orden -1. Vivienda de emergencia (la urgencia resuelta), 2. Infraestructura comunitaria (el barrio mejora), 3. Vivienda progresiva (la casa crece), 4. Eventos - Día de la Niñez (el vínculo se sostiene), 5. Colectas (ropa, juguetes, pañales)- y cierra con la invitación a sumarse.">
+    <section aria-labelledby="titulo-destacados" class="bg-techo-50 py-12">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 id="titulo-destacados" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Antes de salir</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <div class="rounded-xl border-l-4 border-naranja-700 bg-white p-5 shadow-sm">
+            <h3 class="font-titulos text-lg font-bold text-techo-900">Recomendaciones para todas las paradas</h3>
+            <ul class="mt-3 list-disc space-y-2 pl-5">
+              <li>Ropa cómoda que se pueda ensuciar y calzado cerrado.</li>
+              <li>Protector solar, gorra y agua propia: casi todo pasa al aire libre.</li>
+              <li>No hace falta experiencia previa: siempre hay una persona de TECHO coordinando.</li>
+              <li>Las jornadas se coordinan con la sede antes de ir: no son visitas libres.</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border-l-4 border-techo-500 bg-white p-5 shadow-sm">
+            <h3 class="font-titulos text-lg font-bold text-techo-900">Fechas para agendar</h3>
+            <ul class="mt-3 space-y-3">
+              <li><span class="font-bold">Abril y mayo:</span> Colecta Anual de TECHO, la campaña nacional de recaudación.</li>
+              <li><span class="font-bold">Agosto:</span> Día de la Niñez, la jornada recreativa más grande del año en los barrios.</li>
+              <li><span class="font-bold">Invierno y comienzo de clases:</span> colectas de ropa de abrigo y útiles escolares.</li>
+              <li><span class="font-bold">Todo el año:</span> construcciones de fin de semana y jornadas de infraestructura.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Los 5 puntos de interés</h2>
-      <div class="gallery-list">
-        <div class="gallery-card">
-          <h3>1. Vivienda de emergencia</h3>
-          <p>El proyecto insignia: casas prefabricadas de madera, construidas en un fin de semana junto a la familia y un grupo de voluntarios.</p>
-          <a class="btn" href="vivienda-emergencia.html">Ver recorrido</a>
+    <section aria-labelledby="titulo-cta" class="mx-auto max-w-6xl px-4 py-12">
+      <div class="flex flex-col items-start gap-4 rounded-2xl bg-techo-900 p-8 text-white md:flex-row md:items-center md:justify-between">
+        <div>
+          <h2 id="titulo-cta" class="font-titulos text-2xl font-bold">¿Querés sumarte o tenés una duda?</h2>
+          <p class="mt-1 text-techo-100">Inscribite a una jornada o escribinos y te ayudamos a elegir por dónde empezar.</p>
         </div>
-        <div class="gallery-card">
-          <h3>2. Infraestructura comunitaria</h3>
-          <p>Veredas, escaleras, caminos y espacios recreativos que TECHO construye junto a los vecinos para mejorar la vida en el barrio.</p>
-          <a class="btn" href="infraestructura-comunitaria.html">Ver recorrido</a>
-        </div>
-        <div class="gallery-card">
-          <h3>3. Vivienda progresiva</h3>
-          <p>Un modelo de vivienda flexible que las familias pueden ampliar con el tiempo, según sus necesidades.</p>
-          <a class="btn" href="vivienda-progresiva.html">Ver recorrido</a>
-        </div>
-        <div class="gallery-card">
-          <h3>4. Eventos</h3>
-          <p>Jornadas recreativas para las infancias del barrio, como el Día de la Niñez, organizadas junto a los voluntarios.</p>
-          <a class="btn" href="eventos.html">Ver recorrido</a>
-        </div>
-        <div class="gallery-card">
-          <h3>5. Colectas</h3>
-          <p>Recolección de ropa, juguetes y pañales para las familias de los barrios donde trabaja TECHO.</p>
-          <a class="btn" href="colectas.html">Ver recorrido</a>
+        <div class="flex flex-wrap gap-3">
+          <a href="sumate.html" class="inline-flex items-center gap-2 rounded-md bg-naranja-700 px-5 py-3 font-bold text-white hover:bg-white hover:text-naranja-700">Inscribirme</a>
+          <a href="contacto.html" class="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 font-bold text-techo-900 hover:bg-techo-100">Escribir una consulta</a>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>¿Querés sumarte?</h2>
-      <p>
-        Después de conocer los 5 proyectos, conocé cómo participar como voluntario o hacer una donación.
-      </p>
-      <a class="btn" href="sumate.html">Ir a Sumate</a>
-    </section>
-
-    <section>
-      <h2>Documentación del proyecto</h2>
-      <p>
-        Para más detalles sobre la propuesta, el tema elegido y los objetivos de este recorrido,
-        consultá el archivo <a href="README.md">README.md</a> del repositorio.
-      </p>
+    <section aria-labelledby="titulo-equipo" class="mx-auto max-w-6xl px-4 pb-4">
+      <h2 id="titulo-equipo" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Quiénes armamos el recorrido</h2>
+      <p class="mt-4">Grupo N.º 6 · Diseño y Desarrollo Web. Cada integrante investigó y escribió una parada.</p>
+      <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <li class="rounded-lg border border-techo-100 p-4"><span class="block font-bold">Díaz Seoane, Agustín Edgardo</span><span class="text-sm text-tinta-suave">Parada 1 · Vivienda de emergencia</span></li>
+        <li class="rounded-lg border border-techo-100 p-4"><span class="block font-bold">Ferrario, Lorenzo</span><span class="text-sm text-tinta-suave">Parada 2 · Infraestructura comunitaria</span></li>
+        <li class="rounded-lg border border-techo-100 p-4"><span class="block font-bold">Calderón, Felipe</span><span class="text-sm text-tinta-suave">Parada 3 · Vivienda progresiva</span></li>
+        <li class="rounded-lg border border-techo-100 p-4"><span class="block font-bold">Fernández, Nicolás Esteban</span><span class="text-sm text-tinta-suave">Parada 4 · Eventos</span></li>
+        <li class="rounded-lg border border-techo-100 p-4"><span class="block font-bold">Srolovich, Lara</span><span class="text-sm text-tinta-suave">Parada 5 · Colectas</span></li>
+      </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Techo para Argentina &middot; Diseño y Desarrollo Web &middot; Actividad 2 - Diseño de un Recorrido</p>
+  <footer class="site-footer mt-16 bg-techo-900 text-white">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
+      <div>
+        <img src="logo.png" alt="TECHO" width="147" height="35" class="h-9 w-auto rounded bg-white px-2 py-1">
+        <p class="mt-3 font-titulos text-lg font-bold">Techo para Argentina</p>
+        <p class="mt-1 text-sm text-techo-100">Un recorrido en cinco paradas por los barrios populares donde trabaja TECHO, de la Zona Sur del GBA a la Ciudad de Buenos Aires.</p>
+      </div>
+      <nav aria-label="El recorrido">
+        <h2 class="font-titulos font-bold">El recorrido</h2>
+        <ol class="mt-2 space-y-1 text-sm">
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="vivienda-emergencia.html">1. Vivienda de emergencia</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="infraestructura-comunitaria.html">2. Infraestructura comunitaria</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="vivienda-progresiva.html">3. Vivienda progresiva</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="eventos.html">4. Eventos: Día de la Niñez</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="colectas.html">5. Colectas solidarias</a></li>
+        </ol>
+      </nav>
+      <div>
+        <h2 class="font-titulos font-bold">Más información</h2>
+        <ul class="mt-2 space-y-1 text-sm">
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="sumate.html">Inscribite a una jornada</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="contacto.html">Contacto</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="design-system.html">Design System del sitio</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="https://github.com/agustin1115/Actividad-1-Galer-a-Visual">Repositorio en GitHub</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="https://argentina.techo.org/">Sitio oficial de TECHO Argentina</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="border-t border-white/20 px-4 py-4 text-center text-sm text-techo-100">
+      Proyecto académico · Diseño y Desarrollo Web · Actividad 3 · Grupo 6. No es el sitio oficial de TECHO Argentina.
+    </p>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/paradas.js" defer></script>
+  <script src="js/mapa.js" defer></script>
 </body>
 
 </html>
