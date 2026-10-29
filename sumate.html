@@ -1,61 +1,320 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sumate - Techo para Argentina</title>
+  <meta name="description" content="Cierre del recorrido: inscribite a una jornada de TECHO, calculá tu aporte y conocé otras formas de sumarte.">
+  <title>Sumate · Inscribite a una jornada · Techo para Argentina</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind.config.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-  <header class="site-header">
-    <img class="site-logo" src="logo.png" alt="Logo de TECHO">
-    <h1>Techo para Argentina</h1>
-    <p>Un recorrido por las intervenciones de TECHO en los barrios populares</p>
+<body class="bg-white font-texto leading-relaxed text-tinta antialiased">
+  <a href="#contenido"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[1200] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:font-bold focus:text-techo-900">Saltar al contenido</a>
+
+  <header class="site-header relative z-[1100] bg-techo-900 text-white shadow-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.png" alt="TECHO" width="147" height="35" class="h-9 w-auto rounded bg-white px-2 py-1">
+        <span class="font-titulos text-base font-bold leading-tight sm:text-xl">Techo para Argentina</span>
+      </a>
+      <button type="button" class="nav-toggle inline-flex items-center gap-2 rounded border border-white/60 px-3 py-2 font-bold lg:hidden"
+        aria-expanded="false" aria-controls="menu-principal">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        Menú
+      </button>
+    </div>
+    <nav aria-label="Principal" class="border-t border-white/20">
+      <ul id="menu-principal" class="mx-auto hidden max-w-6xl flex-col gap-1 px-4 py-2 text-[0.95rem] lg:flex lg:flex-row lg:flex-wrap lg:justify-center">
+        <li><a href="index.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Inicio</a></li>
+        <li><a href="vivienda-emergencia.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Vivienda de emergencia</a></li>
+        <li><a href="infraestructura-comunitaria.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Infraestructura comunitaria</a></li>
+        <li><a href="vivienda-progresiva.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Vivienda progresiva</a></li>
+        <li><a href="eventos.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Eventos</a></li>
+        <li><a href="colectas.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Colectas</a></li>
+        <li><a href="sumate.html" aria-current="page"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Sumate</a></li>
+        <li><a href="contacto.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav class="site-nav">
-    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
-      Menú
-      <span class="nav-toggle-icon" aria-hidden="true"></span>
-    </button>
-    <ul class="nav-list" id="nav-list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="vivienda-emergencia.html">Vivienda de emergencia</a></li>
-      <li><a href="infraestructura-comunitaria.html">Infraestructura comunitaria</a></li>
-      <li><a href="vivienda-progresiva.html">Vivienda progresiva</a></li>
-      <li><a href="eventos.html">Eventos</a></li>
-      <li><a href="colectas.html">Colectas</a></li>
-      <li><a href="sumate.html" class="activo">Sumate</a></li>
-    </ul>
-  </nav>
+  <main id="contenido">
+    <section class="bg-techo-50">
+      <div class="mx-auto max-w-6xl px-4 py-8 md:py-12">
+        <nav aria-label="Ruta de navegación" class="text-sm">
+          <ol class="flex flex-wrap items-center gap-1 text-tinta-suave">
+            <li><a href="index.html" class="text-techo-900 underline underline-offset-2 hover:text-naranja-700">Inicio</a></li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">Sumate</li>
+          </ol>
+        </nav>
+        <p class="mt-6 font-titulos text-sm font-bold uppercase tracking-wider text-naranja-700">Cierre del recorrido</p>
+        <h1 class="mt-1 font-titulos text-3xl font-bold leading-tight text-techo-900 sm:text-4xl">Sumate</h1>
+        <p class="mt-4 max-w-3xl text-lg">
+          Ya recorriste las 5 paradas con las que TECHO trabaja en los barrios populares: de la vivienda
+          de emergencia a las colectas. Cada una se sostiene con voluntarios y con donaciones. Elegí cómo
+          querés participar.
+        </p>
+        <ul class="mt-8 grid gap-4 md:grid-cols-3">
+          <li class="flex flex-col rounded-xl border-2 border-naranja-700 bg-white p-5 shadow-sm">
+            <h2 class="font-titulos text-lg font-bold text-techo-900">Inscribite a una jornada</h2>
+            <p class="mt-1 flex-1 text-tinta-suave">Elegí una de las 5 paradas, la fecha y cuántos van. Calculamos tu aporte al instante.</p>
+            <a href="#inscripcion" class="mt-4 inline-flex items-center gap-2 self-start rounded-md bg-naranja-700 px-4 py-2 font-bold text-white hover:bg-techo-900">Ir al formulario</a>
+          </li>
+          <li class="flex flex-col rounded-xl border border-techo-100 bg-white p-5 shadow-sm">
+            <h2 class="font-titulos text-lg font-bold text-techo-900">Doná a TECHO</h2>
+            <p class="mt-1 flex-1 text-tinta-suave">Para que se sigan construyendo viviendas de emergencia, podés donar en el sitio oficial de TECHO Argentina.</p>
+            <a href="https://argentina.techo.org/sumate/" class="mt-4 inline-flex items-center gap-2 self-start rounded-md border-2 border-techo-900 px-4 py-2 font-bold text-techo-900 hover:bg-techo-100">Donar en argentina.techo.org<span class="sr-only"> (sitio externo)</span></a>
+          </li>
+          <li class="flex flex-col rounded-xl border border-techo-100 bg-white p-5 shadow-sm">
+            <h2 class="font-titulos text-lg font-bold text-techo-900">Voluntariado regular</h2>
+            <p class="mt-1 flex-1 text-tinta-suave">Si querés sumarte de forma estable a una sede, las convocatorias están en la plataforma de actividades de TECHO.</p>
+            <a href="https://actividades.techo.org/" class="mt-4 inline-flex items-center gap-2 self-start rounded-md border-2 border-techo-900 px-4 py-2 font-bold text-techo-900 hover:bg-techo-100">Ver actividades<span class="sr-only"> en actividades.techo.org (sitio externo)</span></a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-  <main>
-    <section>
-      <h2>Sumate</h2>
-      <p>
-        Ya recorriste los 5 proyectos con los que TECHO trabaja en los barrios populares de
-        Argentina: de la vivienda de emergencia a la infraestructura comunitaria. Cada uno se
-        sostiene con voluntarios y con donaciones.
-      </p>
-      <p>
-        Si querés participar de una construcción o donar para que se sigan levantando
-        viviendas de emergencia, podés hacerlo directamente en el sitio de TECHO Argentina.
-      </p>
-      <p>
-        <a class="btn" href="https://argentina.techo.org/sumate/" target="_blank" rel="noopener">Donar en argentina.techo.org/sumate</a>
-      </p>
-      <p>
-        Para sumarte como voluntario o voluntaria regular:
-        <a href="https://actividades.techo.org/" target="_blank" rel="noopener">actividades.techo.org</a>
-      </p>
+    <section id="inscripcion" aria-labelledby="titulo-inscripcion" class="mx-auto max-w-6xl scroll-mt-4 px-4 py-12">
+      <h2 id="titulo-inscripcion" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Inscribite a una jornada</h2>
+      <div role="note" class="mt-4 flex gap-3 rounded-lg border border-techo-300 bg-techo-50 p-4 text-sm">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-techo-900" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+        <p><strong>Simulación.</strong> Este formulario es parte de un trabajo práctico: no se envían datos a TECHO ni se cobra nada. Los aportes son valores de referencia para mostrar el cálculo.</p>
+      </div>
+
+      <div id="paso-formulario" class="mt-6">
+        <div id="errores-inscripcion" tabindex="-1" class="mb-6 hidden rounded-lg border-2 border-red-700 bg-red-50 p-4">
+          <h3 class="font-bold text-red-700"><span aria-hidden="true">⚠ </span>Revisá estos datos antes de continuar:</h3>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-red-700"></ul>
+        </div>
+
+        <form id="form-inscripcion" novalidate class="grid gap-8 lg:grid-cols-3">
+          <div class="space-y-8 lg:col-span-2">
+            <fieldset aria-describedby="error-jornada">
+              <legend class="font-titulos text-lg font-bold text-techo-900">1. Elegí la jornada <span class="font-normal text-tinta-suave">(obligatorio)</span></legend>
+              <p id="error-jornada" class="mt-1 hidden text-sm font-bold text-red-700"></p>
+              <div class="mt-3 grid gap-3 sm:grid-cols-2">
+              <label class="flex cursor-pointer gap-3 rounded-lg border-2 border-techo-100 bg-white p-4 hover:border-techo-500 has-[:checked]:border-techo-700 has-[:checked]:bg-techo-50">
+                <input type="radio" name="jornada" id="jornada-vivienda-emergencia" value="vivienda-emergencia" data-campo="jornada" data-precio="35000" data-nombre="Vivienda de emergencia" data-lugar="Florencio Varela"
+                  class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                <span>
+                  <span class="block font-bold">Parada 1 · Vivienda de emergencia</span>
+                  <span class="block text-sm text-tinta-suave">Fin de semana de obra · incluye almuerzos · Florencio Varela</span>
+                  <span class="mt-1 block font-bold text-techo-900">$ 35.000 por persona</span>
+                </span>
+              </label>
+              <label class="flex cursor-pointer gap-3 rounded-lg border-2 border-techo-100 bg-white p-4 hover:border-techo-500 has-[:checked]:border-techo-700 has-[:checked]:bg-techo-50">
+                <input type="radio" name="jornada" id="jornada-infraestructura-comunitaria" value="infraestructura-comunitaria" data-campo="jornada" data-precio="15000" data-nombre="Infraestructura comunitaria" data-lugar="Berazategui"
+                  class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                <span>
+                  <span class="block font-bold">Parada 2 · Infraestructura comunitaria</span>
+                  <span class="block text-sm text-tinta-suave">Un día de obra · incluye almuerzo · Berazategui</span>
+                  <span class="mt-1 block font-bold text-techo-900">$ 15.000 por persona</span>
+                </span>
+              </label>
+              <label class="flex cursor-pointer gap-3 rounded-lg border-2 border-techo-100 bg-white p-4 hover:border-techo-500 has-[:checked]:border-techo-700 has-[:checked]:bg-techo-50">
+                <input type="radio" name="jornada" id="jornada-vivienda-progresiva" value="vivienda-progresiva" data-campo="jornada" data-precio="15000" data-nombre="Vivienda progresiva" data-lugar="Quilmes"
+                  class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                <span>
+                  <span class="block font-bold">Parada 3 · Vivienda progresiva</span>
+                  <span class="block text-sm text-tinta-suave">Un día de obra · incluye almuerzo · Quilmes</span>
+                  <span class="mt-1 block font-bold text-techo-900">$ 15.000 por persona</span>
+                </span>
+              </label>
+              <label class="flex cursor-pointer gap-3 rounded-lg border-2 border-techo-100 bg-white p-4 hover:border-techo-500 has-[:checked]:border-techo-700 has-[:checked]:bg-techo-50">
+                <input type="radio" name="jornada" id="jornada-eventos" value="eventos" data-campo="jornada" data-precio="6000" data-nombre="Eventos: Día de la Niñez" data-lugar="Avellaneda"
+                  class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                <span>
+                  <span class="block font-bold">Parada 4 · Eventos: Día de la Niñez</span>
+                  <span class="block text-sm text-tinta-suave">Media jornada · materiales y merienda · Avellaneda</span>
+                  <span class="mt-1 block font-bold text-techo-900">$ 6.000 por persona</span>
+                </span>
+              </label>
+              <label class="flex cursor-pointer gap-3 rounded-lg border-2 border-techo-100 bg-white p-4 hover:border-techo-500 has-[:checked]:border-techo-700 has-[:checked]:bg-techo-50">
+                <input type="radio" name="jornada" id="jornada-colectas" value="colectas" data-campo="jornada" data-precio="0" data-nombre="Clasificación de colectas" data-lugar="Ciudad de Buenos Aires"
+                  class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                <span>
+                  <span class="block font-bold">Parada 5 · Clasificación de colectas</span>
+                  <span class="block text-sm text-tinta-suave">De 2 a 3 horas · Ciudad de Buenos Aires</span>
+                  <span class="mt-1 block font-bold text-techo-900">Sin costo</span>
+                </span>
+              </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="font-titulos text-lg font-bold text-techo-900">2. Fecha y cantidad de personas</legend>
+              <div class="mt-3 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label for="fecha" class="block font-bold">Fecha de la jornada <span class="font-normal text-tinta-suave">(obligatorio)</span></label>
+                  <input type="date" id="fecha" name="fecha" data-campo="fecha" aria-describedby="ayuda-fecha error-fecha" class="mt-1 block w-full rounded-md border-2 border-tinta-suave bg-white px-3 py-2 aria-[invalid=true]:border-red-700 aria-[invalid=true]:bg-red-50">
+                  <p id="ayuda-fecha" class="mt-1 text-sm text-tinta-suave">Las jornadas son sábados o domingos, hasta 6 meses adelante.</p>
+                  <p id="error-fecha" class="mt-1 hidden text-sm font-bold text-red-700"></p>
+                </div>
+                <div>
+                  <label for="cantidad" class="block font-bold">Cantidad de personas <span class="font-normal text-tinta-suave">(obligatorio)</span></label>
+                  <input type="number" id="cantidad" name="cantidad" data-campo="cantidad" min="1" max="10" step="1" value="1" inputmode="numeric"
+                    aria-describedby="ayuda-cantidad error-cantidad" class="mt-1 block w-full rounded-md border-2 border-tinta-suave bg-white px-3 py-2 aria-[invalid=true]:border-red-700 aria-[invalid=true]:bg-red-50">
+                  <p id="ayuda-cantidad" class="mt-1 text-sm text-tinta-suave">De 1 a 10 personas. Para grupos más grandes, <a href="contacto.html">escribinos</a>.</p>
+                  <p id="error-cantidad" class="mt-1 hidden text-sm font-bold text-red-700"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="font-titulos text-lg font-bold text-techo-900">3. Adicionales <span class="font-normal text-tinta-suave">(opcionales, por persona)</span></legend>
+              <div class="mt-3 grid gap-3">
+              <label class="flex cursor-pointer items-start gap-3 rounded-lg border border-techo-100 p-3 has-[:checked]:border-techo-700 has-[:checked]:bg-techo-50">
+                <input type="checkbox" name="adicional" value="traslado" data-precio="8000" data-nombre="Traslado ida y vuelta desde el punto de encuentro" class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                <span>Traslado ida y vuelta desde el punto de encuentro <span class="block text-sm font-bold text-techo-900">+ $ 8.000 por persona</span></span>
+              </label>
+              <label class="flex cursor-pointer items-start gap-3 rounded-lg border border-techo-100 p-3 has-[:checked]:border-techo-700 has-[:checked]:bg-techo-50">
+                <input type="checkbox" name="adicional" value="remera" data-precio="12000" data-nombre="Remera de voluntariado" class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                <span>Remera de voluntariado <span class="block text-sm font-bold text-techo-900">+ $ 12.000 por persona</span></span>
+              </label>
+              <label class="flex cursor-pointer items-start gap-3 rounded-lg border border-techo-100 p-3 has-[:checked]:border-techo-700 has-[:checked]:bg-techo-50">
+                <input type="checkbox" name="adicional" value="kit" data-precio="6000" data-nombre="Kit de protección (guantes y antiparras)" class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                <span>Kit de protección (guantes y antiparras) <span class="block text-sm font-bold text-techo-900">+ $ 6.000 por persona</span></span>
+              </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="font-titulos text-lg font-bold text-techo-900">4. Tus datos</legend>
+              <div class="mt-3 grid gap-4 sm:grid-cols-2">
+                <div class="sm:col-span-2">
+                  <label for="nombre" class="block font-bold">Nombre y apellido <span class="font-normal text-tinta-suave">(obligatorio)</span></label>
+                  <input type="text" id="nombre" name="nombre" data-campo="nombre" autocomplete="name" aria-describedby="error-nombre" class="mt-1 block w-full rounded-md border-2 border-tinta-suave bg-white px-3 py-2 aria-[invalid=true]:border-red-700 aria-[invalid=true]:bg-red-50">
+                  <p id="error-nombre" class="mt-1 hidden text-sm font-bold text-red-700"></p>
+                </div>
+                <div>
+                  <label for="email" class="block font-bold">Correo electrónico <span class="font-normal text-tinta-suave">(obligatorio)</span></label>
+                  <input type="email" id="email" name="email" data-campo="email" autocomplete="email" aria-describedby="ayuda-email error-email" class="mt-1 block w-full rounded-md border-2 border-tinta-suave bg-white px-3 py-2 aria-[invalid=true]:border-red-700 aria-[invalid=true]:bg-red-50">
+                  <p id="ayuda-email" class="mt-1 text-sm text-tinta-suave">Ahí te llegaría la confirmación y el punto de encuentro.</p>
+                  <p id="error-email" class="mt-1 hidden text-sm font-bold text-red-700"></p>
+                </div>
+                <div>
+                  <label for="telefono" class="block font-bold">Teléfono <span class="font-normal text-tinta-suave">(opcional)</span></label>
+                  <input type="tel" id="telefono" name="telefono" data-campo="telefono" autocomplete="tel" aria-describedby="ayuda-telefono error-telefono" class="mt-1 block w-full rounded-md border-2 border-tinta-suave bg-white px-3 py-2 aria-[invalid=true]:border-red-700 aria-[invalid=true]:bg-red-50">
+                  <p id="ayuda-telefono" class="mt-1 text-sm text-tinta-suave">Con código de área, por ejemplo 11 2345-6789.</p>
+                  <p id="error-telefono" class="mt-1 hidden text-sm font-bold text-red-700"></p>
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="flex cursor-pointer items-start gap-3">
+                    <input type="checkbox" id="mayor" name="mayor" data-campo="mayor" aria-describedby="error-mayor" class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                    <span>Confirmo que soy mayor de 18 años o que participo con un adulto responsable. <span class="font-normal text-tinta-suave">(obligatorio)</span></span>
+                  </label>
+                  <p id="error-mayor" class="mt-1 hidden text-sm font-bold text-red-700"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="inline-flex items-center gap-2 rounded-md bg-naranja-700 px-6 py-3 font-bold text-white shadow hover:bg-techo-900">
+              Revisar inscripción
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+
+          <aside aria-labelledby="titulo-importe" class="h-fit rounded-xl border-2 border-techo-300 bg-techo-50 p-5 lg:sticky lg:top-4">
+            <h3 id="titulo-importe" class="font-titulos text-xl font-bold text-techo-900">Tu aporte</h3>
+            <dl class="mt-3 space-y-2 text-sm">
+              <div class="flex justify-between gap-3"><dt>Jornada</dt><dd id="importe-jornada" class="text-right font-bold">Sin elegir</dd></div>
+              <div class="flex justify-between gap-3"><dt>Aporte de la jornada</dt><dd id="importe-unitario" class="font-bold">$ 0</dd></div>
+              <div class="flex justify-between gap-3"><dt>Adicionales</dt><dd id="importe-adicionales" class="font-bold">$ 0</dd></div>
+              <div class="flex justify-between gap-3 border-t border-techo-300 pt-2"><dt>Por persona</dt><dd id="importe-por-persona" class="font-bold">$ 0</dd></div>
+              <div class="flex justify-between gap-3"><dt>Personas</dt><dd id="importe-personas" class="font-bold">1</dd></div>
+            </dl>
+            <p class="mt-4 border-t-2 border-techo-900 pt-3 text-sm font-bold uppercase tracking-wide text-tinta-suave">Total</p>
+            <p id="importe-total" aria-live="polite" class="font-titulos text-3xl font-bold text-techo-900">$ 0</p>
+            <p id="importe-equivalente" class="text-sm text-tinta-suave"></p>
+
+            <fieldset class="mt-4">
+              <legend class="text-sm font-bold">Ver el total en</legend>
+              <div class="mt-2 flex gap-4">
+                <label class="flex items-center gap-2"><input type="radio" name="moneda" value="ARS" checked class="h-4 w-4 accent-naranja-700"> Pesos (ARS)</label>
+                <label class="flex items-center gap-2"><input type="radio" name="moneda" value="USD" class="h-4 w-4 accent-naranja-700"> Dólares (USD)</label>
+              </div>
+            </fieldset>
+            <p class="mt-3 text-xs text-tinta-suave">El aporte se expresa y se abona en pesos argentinos. El valor en dólares es una referencia.</p>
+            <p id="tipo-cambio" class="mt-1 text-xs text-tinta-suave"></p>
+          </aside>
+        </form>
+      </div>
+
+      <div id="paso-resumen" class="mt-6 hidden max-w-3xl">
+        <h3 data-foco tabindex="-1" class="font-titulos text-2xl font-bold text-techo-900">Revisá tu inscripción</h3>
+        <p class="mt-2 text-tinta-suave">Todavía no está confirmada. Si algo no está bien, volvé a editar.</p>
+        <dl id="resumen-datos" class="mt-4"></dl>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <button type="button" id="boton-confirmar" class="inline-flex items-center gap-2 rounded-md bg-naranja-700 px-6 py-3 font-bold text-white shadow hover:bg-techo-900">Confirmar inscripción</button>
+          <button type="button" id="boton-editar" class="inline-flex items-center gap-2 rounded-md border-2 border-techo-900 bg-white px-6 py-3 font-bold text-techo-900 hover:bg-techo-100">Volver a editar</button>
+        </div>
+      </div>
+
+      <div id="paso-confirmacion" class="mt-6 hidden max-w-3xl rounded-xl border-2 border-green-800 bg-green-50 p-6">
+        <h3 data-foco tabindex="-1" class="flex items-center gap-2 font-titulos text-2xl font-bold text-green-800">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+          ¡Listo, <span id="confirmacion-nombre"></span>! Tu solicitud quedó registrada
+        </h3>
+        <p class="mt-3">Número de solicitud: <strong id="confirmacion-numero" class="font-titulos text-lg"></strong></p>
+        <p class="mt-2">Jornada: <strong id="confirmacion-jornada"></strong>, el <strong id="confirmacion-fecha"></strong>.</p>
+        <p class="mt-2">En un sitio real, la sede de TECHO te escribiría a <strong id="confirmacion-email"></strong> con el punto de encuentro y la forma de abonar el aporte.</p>
+        <p class="mt-2 text-sm text-tinta-suave">Recordá que es una simulación: no se envió ningún dato.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <button type="button" id="boton-otra" class="inline-flex items-center gap-2 rounded-md bg-naranja-700 px-6 py-3 font-bold text-white shadow hover:bg-techo-900">Hacer otra inscripción</button>
+          <a href="index.html" class="inline-flex items-center gap-2 rounded-md border-2 border-techo-900 bg-white px-6 py-3 font-bold text-techo-900 hover:bg-techo-100">Volver al inicio</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Techo para Argentina &middot; Diseño y Desarrollo Web &middot; Actividad 2 - Diseño de un Recorrido</p>
+  <footer class="site-footer mt-16 bg-techo-900 text-white">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
+      <div>
+        <img src="logo.png" alt="TECHO" width="147" height="35" class="h-9 w-auto rounded bg-white px-2 py-1">
+        <p class="mt-3 font-titulos text-lg font-bold">Techo para Argentina</p>
+        <p class="mt-1 text-sm text-techo-100">Un recorrido en cinco paradas por los barrios populares donde trabaja TECHO, de la Zona Sur del GBA a la Ciudad de Buenos Aires.</p>
+      </div>
+      <nav aria-label="El recorrido">
+        <h2 class="font-titulos font-bold">El recorrido</h2>
+        <ol class="mt-2 space-y-1 text-sm">
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="vivienda-emergencia.html">1. Vivienda de emergencia</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="infraestructura-comunitaria.html">2. Infraestructura comunitaria</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="vivienda-progresiva.html">3. Vivienda progresiva</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="eventos.html">4. Eventos: Día de la Niñez</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="colectas.html">5. Colectas solidarias</a></li>
+        </ol>
+      </nav>
+      <div>
+        <h2 class="font-titulos font-bold">Más información</h2>
+        <ul class="mt-2 space-y-1 text-sm">
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="sumate.html">Inscribite a una jornada</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="contacto.html">Contacto</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="design-system.html">Design System del sitio</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="https://github.com/agustin1115/Actividad-1-Galer-a-Visual">Repositorio en GitHub</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="https://argentina.techo.org/">Sitio oficial de TECHO Argentina</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="border-t border-white/20 px-4 py-4 text-center text-sm text-techo-100">
+      Proyecto académico · Diseño y Desarrollo Web · Actividad 3 · Grupo 6. No es el sitio oficial de TECHO Argentina.
+    </p>
   </footer>
 
   <script src="js/main.js" defer></script>
+  <script src="js/formularios.js" defer></script>
+  <script src="js/inscripcion.js" defer></script>
 </body>
+
 </html>

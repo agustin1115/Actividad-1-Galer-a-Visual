@@ -4,157 +4,293 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vivienda Progresiva - Techo para Argentina</title>
+  <meta name="description" content="Parada 3 del recorrido: una vivienda progresiva de TECHO, pensada para crecer, en un barrio de Quilmes.">
+  <title>Vivienda progresiva · Parada 3 · Techo para Argentina</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="bg-white font-texto leading-relaxed text-tinta antialiased">
+  <a href="#contenido"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[1200] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:font-bold focus:text-techo-900">Saltar al contenido</a>
 
-  <header class="site-header">
-    <img class="site-logo" src="logo.png" alt="Logo de TECHO">
-    <h1>Techo para Argentina</h1>
-    <p>Un recorrido por las intervenciones de TECHO en los barrios populares</p>
+  <header class="site-header relative z-[1100] bg-techo-900 text-white shadow-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.png" alt="TECHO" width="147" height="35" class="h-9 w-auto rounded bg-white px-2 py-1">
+        <span class="font-titulos text-base font-bold leading-tight sm:text-xl">Techo para Argentina</span>
+      </a>
+      <button type="button" class="nav-toggle inline-flex items-center gap-2 rounded border border-white/60 px-3 py-2 font-bold lg:hidden"
+        aria-expanded="false" aria-controls="menu-principal">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        Menú
+      </button>
+    </div>
+    <nav aria-label="Principal" class="border-t border-white/20">
+      <ul id="menu-principal" class="mx-auto hidden max-w-6xl flex-col gap-1 px-4 py-2 text-[0.95rem] lg:flex lg:flex-row lg:flex-wrap lg:justify-center">
+        <li><a href="index.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Inicio</a></li>
+        <li><a href="vivienda-emergencia.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Vivienda de emergencia</a></li>
+        <li><a href="infraestructura-comunitaria.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Infraestructura comunitaria</a></li>
+        <li><a href="vivienda-progresiva.html" aria-current="page"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Vivienda progresiva</a></li>
+        <li><a href="eventos.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Eventos</a></li>
+        <li><a href="colectas.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Colectas</a></li>
+        <li><a href="sumate.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Sumate</a></li>
+        <li><a href="contacto.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav class="site-nav">
-    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
-      Menú
-      <span class="nav-toggle-icon" aria-hidden="true"></span>
-    </button>
-    <ul class="nav-list" id="nav-list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="vivienda-emergencia.html">Vivienda de emergencia</a></li>
-      <li><a href="infraestructura-comunitaria.html">Infraestructura comunitaria</a></li>
-      <li><a href="vivienda-progresiva.html" class="activo">Vivienda progresiva</a></li>
-      <li><a href="eventos.html">Eventos</a></li>
-      <li><a href="colectas.html">Colectas</a></li>
-      <li><a href="sumate.html">Sumate</a></li>
-    </ul>
-  </nav>
+  <main id="contenido">
+    <div class="bg-techo-50">
+      <div class="mx-auto max-w-6xl px-4 pt-5">
+        <nav aria-label="Ruta de navegación" class="text-sm">
+          <ol class="flex flex-wrap items-center gap-1 text-tinta-suave">
+            <li><a href="index.html" class="text-techo-900 underline underline-offset-2 hover:text-naranja-700">Inicio</a></li>
+            <li aria-hidden="true">›</li>
+            <li><a href="index.html#recorrido" class="text-techo-900 underline underline-offset-2 hover:text-naranja-700">Recorrido</a></li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">Parada 3</li>
+          </ol>
+        </nav>
 
-  <main>
-    <section>
-      <span class="punto-num">3 de 5</span>
-      <h2>Vivienda Progresiva</h2>
-      <p>
-        Un modelo de vivienda pensado para crecer: arranca en 18 m² y se puede ampliar a
-        36 m² o más, con preinstalaciones eléctricas y sanitarias para que la familia mejore
-        la casa con sus propios recursos a lo largo del tiempo. A diferencia de la vivienda
-        de emergencia, que resuelve una urgencia habitacional, la vivienda progresiva se
-        construye cuando la familia ya cuenta con un terreno propio o regularizado, y busca
-        ser el punto de partida de una casa definitiva.
-      </p>
+        <nav aria-label="Paradas del recorrido" class="mt-5">
+          <ol class="relative flex justify-between gap-1 before:absolute before:left-[10%] before:right-[10%] before:top-5 before:border-t-2 before:border-dashed before:border-techo-300">
+          <li class="relative z-10 flex-1">
+            <a href="vivienda-emergencia.html" class="group flex flex-col items-center gap-1 text-center">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-techo-900 bg-white font-titulos font-bold text-techo-900 group-hover:bg-techo-100">1</span>
+              <span class="text-xs text-tinta-suave group-hover:text-techo-900 group-hover:underline sm:text-sm">Emergencia</span>
+            </a>
+          </li>
+          <li class="relative z-10 flex-1">
+            <a href="infraestructura-comunitaria.html" class="group flex flex-col items-center gap-1 text-center">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-techo-900 bg-white font-titulos font-bold text-techo-900 group-hover:bg-techo-100">2</span>
+              <span class="text-xs text-tinta-suave group-hover:text-techo-900 group-hover:underline sm:text-sm">Infraestructura</span>
+            </a>
+          </li>
+          <li class="relative z-10 flex-1">
+            <a href="vivienda-progresiva.html" aria-current="step" class="flex flex-col items-center gap-1 text-center">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-naranja-700 font-titulos font-bold text-white ring-4 ring-naranja-500/30">3</span>
+              <span class="text-xs font-bold text-naranja-700 sm:text-sm">Progresiva</span>
+            </a>
+          </li>
+          <li class="relative z-10 flex-1">
+            <a href="eventos.html" class="group flex flex-col items-center gap-1 text-center">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-techo-900 bg-white font-titulos font-bold text-techo-900 group-hover:bg-techo-100">4</span>
+              <span class="text-xs text-tinta-suave group-hover:text-techo-900 group-hover:underline sm:text-sm">Eventos</span>
+            </a>
+          </li>
+          <li class="relative z-10 flex-1">
+            <a href="colectas.html" class="group flex flex-col items-center gap-1 text-center">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-techo-900 bg-white font-titulos font-bold text-techo-900 group-hover:bg-techo-100">5</span>
+              <span class="text-xs text-tinta-suave group-hover:text-techo-900 group-hover:underline sm:text-sm">Colectas</span>
+            </a>
+          </li>
+          </ol>
+        </nav>
+      </div>
+
+      <section aria-labelledby="titulo-parada" class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-8 md:grid-cols-2 md:py-12">
+        <div>
+          <p class="font-titulos text-sm font-bold uppercase tracking-wider text-naranja-700">Parada 3 de 5</p>
+          <h1 id="titulo-parada" class="mt-1 font-titulos text-3xl font-bold leading-tight text-techo-900 sm:text-4xl">Vivienda progresiva</h1>
+          <p class="mt-2 flex items-center gap-2 font-bold text-techo-900">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Barrio popular de Quilmes
+          </p>
+          <p class="mt-4 text-lg">Un modelo de vivienda pensado para crecer: arranca en 18 m² y se puede ampliar a 36 m² o más, con preinstalaciones eléctricas y sanitarias para que la familia mejore la casa con sus propios recursos a lo largo del tiempo. A diferencia de la vivienda de emergencia, se construye cuando la familia ya cuenta con un terreno propio o regularizado.</p>
+          <ul class="mt-6 grid gap-3 sm:grid-cols-3">
+            <li class="flex items-start gap-2 rounded-lg bg-white p-3 shadow-sm">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span><span class="block text-xs font-bold uppercase tracking-wide text-tinta-suave">Duración</span>Un día de obra</span>
+            </li>
+            <li class="flex items-start gap-2 rounded-lg bg-white p-3 shadow-sm">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+              <span><span class="block text-xs font-bold uppercase tracking-wide text-tinta-suave">Horario</span>8:30 a 17 h aprox.</span>
+            </li>
+            <li class="flex items-start gap-2 rounded-lg bg-white p-3 shadow-sm">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+              <span><span class="block text-xs font-bold uppercase tracking-wide text-tinta-suave">Acceso</span>Con inscripción previa</span>
+            </li>
+          </ul>
+          <a href="sumate.html?jornada=vivienda-progresiva#inscripcion" class="mt-6 inline-flex items-center gap-2 rounded-md bg-naranja-700 px-5 py-3 font-bold text-white shadow hover:bg-techo-900">Inscribite a esta jornada</a>
+        </div>
+        <figure>
+          <img src="img/vivienda-progresiva-3.jpeg" alt="Pared de ladrillo a la vista junto a una pared ya revestida y terminada de la misma vivienda"
+            class="aspect-[4/3] w-full rounded-xl border-4 border-techo-300 object-cover shadow-lg">
+          <figcaption class="mt-2 text-sm text-tinta-suave">Así se ve la casa creciendo: la pared de ladrillo en obra, junto a la que ya está terminada.</figcaption>
+        </figure>
+      </section>
+    </div>
+
+    <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 lg:grid-cols-3">
+      <div class="space-y-10 lg:col-span-2">
+        <section aria-labelledby="titulo-conocer">
+          <h2 id="titulo-conocer" class="font-titulos text-2xl font-bold text-techo-900">Qué vas a conocer</h2>
+          <ul class="mt-4 list-disc space-y-2 pl-5 marker:text-naranja-700">
+            <li>La diferencia clave con la vivienda de emergencia: acá el terreno ya es de la familia, y la vivienda se pensó desde el diseño para poder crecer sin romper lo construido.</li>
+            <li>Cómo se financia: combina el aporte de la familia, TECHO y en algunos casos programas de subsidio o crédito municipal/provincial.</li>
+            <li>Qué la hace distinta, en palabras de TECHO: es una vivienda "progresiva, flexible y accesible", que ofrece "una respuesta evolutiva, dando a las familias la posibilidad de ampliarla y mejorarla, integrando distintos servicios, de acuerdo a sus necesidades".</li>
+            <li>Que sigue siendo trabajo comunitario: se construye con mano de obra de la familia y voluntarios, igual que la vivienda de emergencia.</li>
+          </ul>
+          <p class="mt-3 text-sm text-tinta-suave">Fuente de la descripción oficial: <a href="https://argentina.techo.org/que-hacemos/">TECHO Argentina, Qué hacemos</a>.</p>
+        </section>
+
+        <section aria-labelledby="titulo-actividades">
+          <h2 id="titulo-actividades" class="font-titulos text-2xl font-bold text-techo-900">Actividades y experiencias</h2>
+          <ul class="mt-4 grid gap-3">
+            <li class="flex gap-3 rounded-lg border border-techo-100 p-4"><span aria-hidden="true" class="font-titulos text-xl font-bold text-naranja-700">1.</span><span>Recorrer una vivienda progresiva ya ampliada, para ver "el antes y el después" de la casa original de 18 m².</span></li>
+            <li class="flex gap-3 rounded-lg border border-techo-100 p-4"><span aria-hidden="true" class="font-titulos text-xl font-bold text-naranja-700">2.</span><span>Sumarte a una jornada de obra: colocación de preinstalaciones, tabiquería interior o terminaciones, según en qué etapa esté la construcción ese fin de semana.</span></li>
+            <li class="flex gap-3 rounded-lg border border-techo-100 p-4"><span aria-hidden="true" class="font-titulos text-xl font-bold text-naranja-700">3.</span><span>Conversar con una familia que ya vivió el proceso de ampliación, para escuchar de primera mano cómo fue crecer la casa con el tiempo.</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="space-y-8" aria-label="Información práctica">
+        <section aria-labelledby="titulo-datos" class="rounded-xl border border-techo-300 bg-techo-50 p-5">
+          <h2 id="titulo-datos" class="font-titulos text-xl font-bold text-techo-900">Datos útiles</h2>
+          <dl class="mt-3 space-y-3">
+            <div>
+              <dt class="font-titulos font-bold text-techo-900">Ubicación</dt>
+              <dd>Un barrio popular de Quilmes (Zona Sur del GBA) con terrenos regularizados. La dirección exacta se comparte al inscribirse.</dd>
+            </div>
+            <div>
+              <dt class="font-titulos font-bold text-techo-900">Duración de la jornada</dt>
+              <dd>Un día completo de obra (aprox. 8:30 a 17:00), igual que en vivienda de emergencia.</dd>
+            </div>
+            <div>
+              <dt class="font-titulos font-bold text-techo-900">Acceso</dt>
+              <dd>Se coordina con la sede de TECHO Argentina antes de la jornada; no es una visita libre.</dd>
+            </div>
+            <div>
+              <dt class="font-titulos font-bold text-techo-900">Cómo coordinar</dt>
+              <dd>Escribiendo a <a href="mailto:info.argentina@techo.org">info.argentina@techo.org</a> o a través de la sección de <a href="https://argentina.techo.org/voluntariado/">voluntariado de TECHO Argentina</a>.</dd>
+            </div>
+            <div>
+              <dt class="font-titulos font-bold text-techo-900">Requisitos</dt>
+              <dd>No hace falta experiencia previa en construcción; se recomienda ropa cómoda, calzado cerrado y protección solar.</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section aria-labelledby="titulo-donde">
+          <h2 id="titulo-donde" class="font-titulos text-xl font-bold text-techo-900">Dónde queda</h2>
+          <div id="mapa-parada" data-mapa-recorrido data-parada="3" role="region"
+            aria-label="Mapa con la ubicación aproximada de la parada 3 y el resto del recorrido"
+            class="z-0 mt-3 h-64 rounded-xl border-2 border-techo-300 bg-white"></div>
+          <p class="mt-3 text-sm">TECHO organiza el traslado desde un punto de encuentro que se confirma al inscribirte. Si vas por tu cuenta, a la zona se llega en tren (línea Roca) o colectivo desde la Ciudad; la dirección exacta del barrio se comparte con quienes se inscriben.</p>
+          <p class="mt-2 text-sm"><a href="index.html#mapa-del-recorrido">Ver el mapa completo del recorrido</a></p>
+        </section>
+      </aside>
+    </div>
+
+    <section aria-labelledby="titulo-fotos" class="mx-auto max-w-6xl px-4">
+      <h2 id="titulo-fotos" class="font-titulos text-2xl font-bold text-techo-900">Fotos de la jornada</h2>
+        <div class="mt-4 grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+          <figure>
+            <img src="img/vivienda-progresiva-1.jpeg" alt="Voluntario subido a una escalera de madera, colocando el revestimiento lateral de una vivienda progresiva" loading="lazy"
+              class="aspect-[4/3] w-full rounded-lg border-[3px] border-techo-300 object-cover">
+            <figcaption class="mt-2 text-center text-sm leading-snug text-tinta-suave">Colocando el revestimiento lateral, panel por panel.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/vivienda-progresiva-2.jpeg" alt="Grupo de voluntarios sentados sobre el techo de una vivienda en construcción" loading="lazy"
+              class="aspect-[4/3] w-full rounded-lg border-[3px] border-techo-300 object-cover">
+            <figcaption class="mt-2 text-center text-sm leading-snug text-tinta-suave">Un momento de descanso arriba del techo, entre tramo y tramo de obra.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/vivienda-progresiva-4.jpeg" alt="Voluntario terminando el techo al atardecer mientras una familia recibe algo en la puerta de la vivienda" loading="lazy"
+              class="aspect-[4/3] w-full rounded-lg border-[3px] border-techo-300 object-cover">
+            <figcaption class="mt-2 text-center text-sm leading-snug text-tinta-suave">Últimos ajustes en el techo mientras cae el sol, con la familia ya en la puerta.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/vivienda-progresiva-5.jpeg" alt="Vivienda terminada al anochecer con chicos del barrio jugando alrededor" loading="lazy"
+              class="aspect-[4/3] w-full rounded-lg border-[3px] border-techo-300 object-cover">
+            <figcaption class="mt-2 text-center text-sm leading-snug text-tinta-suave">La vivienda terminada, ya de noche, con los chicos del barrio jugando alrededor.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/vivienda-progresiva-6.jpeg" alt="Dos voluntarios terminando el techo mientras otra voluntaria entra por la puerta, con ladrillos apilados para la ampliación" loading="lazy"
+              class="aspect-[4/3] w-full rounded-lg border-[3px] border-techo-300 object-cover">
+            <figcaption class="mt-2 text-center text-sm leading-snug text-tinta-suave">Terminando el techo, con los ladrillos de la futura ampliación ya apilados al lado.</figcaption>
+          </figure>
+        </div>
     </section>
 
-    <section>
-      <h3>Qué le queremos contar al visitante</h3>
-      <ul class="guion-list">
-        <li>La diferencia clave con la vivienda de emergencia: acá el terreno ya es de la
-          familia, y la vivienda se pensó desde el diseño para poder crecer sin romper lo
-          construido.</li>
-        <li>Cómo se financia: combina el aporte de la familia, TECHO y en algunos casos
-          programas de subsidio o crédito municipal/provincial.</li>
-        <li>Qué la hace distinta, en palabras de TECHO: es una vivienda "progresiva, flexible
-          y accesible", que ofrece "una respuesta evolutiva, dando a las familias la
-          posibilidad de ampliarla y mejorarla, integrando distintos servicios, de acuerdo a
-          sus necesidades".</li>
-        <li>Que sigue siendo trabajo comunitario: se construye con mano de obra de la
-          familia y voluntarios, igual que la vivienda de emergencia.</li>
-      </ul>
-      <p class="fuente">Fuente de la descripción oficial:
-        <a href="https://argentina.techo.org/que-hacemos/">TECHO Argentina &ndash; Qué hacemos</a>.</p>
-    </section>
-
-    <section>
-      <h3>Actividades y experiencias del visitante</h3>
-      <ul class="guion-list">
-        <li>Recorrer una vivienda progresiva ya ampliada, para ver "el antes y el después"
-          de la casa original de 18 m².</li>
-        <li>Sumarse a una jornada de obra: colocación de preinstalaciones, tabiquería
-          interior o terminaciones, según en qué etapa esté la construcción ese fin de
-          semana.</li>
-        <li>Conversar con una familia que ya vivió el proceso de ampliación, para escuchar
-          de primera mano cómo fue crecer la casa con el tiempo.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Datos útiles</h3>
-      <dl class="datos-utiles">
-        <dt>Ubicación</dt>
-        <dd>Barrios populares de la Zona Sur del GBA (Quilmes, Florencio Varela, entre
-          otros) donde TECHO tiene terrenos regularizados.</dd>
-        <dt>Duración de la jornada</dt>
-        <dd>Un día completo de obra (aprox. 8:30 a 17:00), igual que en vivienda de
-          emergencia.</dd>
-        <dt>Acceso</dt>
-        <dd>Se coordina con la sede de TECHO Argentina antes de la jornada; no es una
-          visita libre.</dd>
-        <dt>Cómo coordinar</dt>
-        <dd>Escribiendo a <a href="mailto:info.argentina@techo.org">info.argentina@techo.org</a>
-          o a través de la sección de
-          <a href="https://argentina.techo.org/voluntariado/">voluntariado de TECHO Argentina</a>.</dd>
-        <dt>Requisitos</dt>
-        <dd>No hace falta experiencia previa en construcción; se recomienda ropa cómoda,
-          calzado cerrado y protección solar.</dd>
-      </dl>
-    </section>
-
-    <section>
-      <h3>Fotos</h3>
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <img src="img/vivienda-progresiva-1.jpeg"
-            alt="Voluntario subido a una escalera de madera, colocando el revestimiento lateral de una vivienda progresiva">
-          <figcaption>Colocando el revestimiento lateral, panel por panel.</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="img/vivienda-progresiva-2.jpeg"
-            alt="Grupo de voluntarios sentados sobre el techo de una vivienda en construcción">
-          <figcaption>Un momento de descanso arriba del techo, entre tramo y tramo de obra.</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="img/vivienda-progresiva-3.jpeg"
-            alt="Pared de ladrillo a la vista junto a una pared ya revestida y terminada de la misma vivienda">
-          <figcaption>Así se ve la casa creciendo: la pared de ladrillo en obra, junto a la que ya está terminada.</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="img/vivienda-progresiva-4.jpeg"
-            alt="Voluntario terminando el techo al atardecer mientras una familia recibe algo en la puerta de la vivienda">
-          <figcaption>Últimos ajustes en el techo mientras cae el sol, con la familia ya en la puerta.</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="img/vivienda-progresiva-5.jpeg"
-            alt="Vivienda terminada al anochecer con chicos del barrio jugando alrededor">
-          <figcaption>La vivienda terminada, ya de noche, con los chicos del barrio jugando alrededor.</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="img/vivienda-progresiva-6.jpeg"
-            alt="Dos voluntarios terminando el techo mientras otra voluntaria entra por la puerta, con ladrillos apilados para la ampliación">
-          <figcaption>Terminando el techo, con los ladrillos de la futura ampliación ya apilados al lado.</figcaption>
-        </figure>
+    <section aria-labelledby="titulo-recomendaciones" class="mx-auto mt-12 max-w-6xl px-4">
+      <h2 id="titulo-recomendaciones" class="font-titulos text-2xl font-bold text-techo-900">Recomendaciones para el visitante</h2>
+      <div class="mt-4 grid gap-6 md:grid-cols-3">
+        <div class="space-y-3 rounded-r-lg border-l-4 border-naranja-700 bg-naranja-50 p-5 md:col-span-2">
+            <p>Llevá ropa que se pueda ensuciar, protector solar y agua propia. La obra se desarrolla al aire libre y puede extenderse varias horas bajo el sol.</p>
+            <p>Es una jornada familiar: se puede participar sin experiencia previa, siguiendo las indicaciones del coordinador de obra de TECHO.</p>
+            <p>Es trabajo físico: se carga material, se usan escaleras y se trabaja en el techo. Si tenés alguna limitación de movilidad, consultalo con la sede antes de la jornada para ver qué tareas se pueden hacer.</p>
+        </div>
+        <div class="flex flex-col justify-center rounded-xl bg-techo-900 p-5 text-white">
+          <p class="font-titulos text-lg font-bold">¿Te sumás a esta jornada?</p>
+          <p class="mt-1 text-sm text-techo-100">Elegí la fecha y calculá tu aporte en un minuto.</p>
+          <a href="sumate.html?jornada=vivienda-progresiva#inscripcion" class="mt-4 inline-flex items-center gap-2 self-start rounded-md bg-white px-4 py-2 font-bold text-techo-900 hover:bg-techo-100">Inscribite a esta jornada</a>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h3>Recomendaciones para el visitante</h3>
-      <div class="recomendacion">
-        <p>Llevar ropa que se pueda ensuciar, protector solar y agua propia. La obra se
-          desarrolla al aire libre y puede extenderse varias horas bajo el sol.</p>
-        <p>Es una jornada familiar: se puede participar sin experiencia previa, siguiendo
-          las indicaciones del coordinador de obra de TECHO.</p>
-        <p>Es trabajo físico: se carga material, se usan escaleras y se trabaja en el techo.
-          Si tenés alguna limitación de movilidad, consultalo con la sede antes de la jornada
-          para ver qué tareas se pueden hacer.</p>
-      </div>
-    </section>
+    <nav aria-label="Otras paradas" class="mx-auto mt-12 grid max-w-6xl gap-4 px-4 sm:grid-cols-2">
+      <a href="infraestructura-comunitaria.html" class="group flex items-center gap-3 rounded-xl border-2 border-techo-100 p-4 hover:border-techo-700">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6 shrink-0 text-techo-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        <span><span class="block text-sm text-tinta-suave">Anterior · Parada 2</span><span class="font-bold text-techo-900 group-hover:underline">Infraestructura comunitaria</span></span>
+      </a>
+      <a href="eventos.html" class="group flex items-center justify-end gap-3 rounded-xl border-2 border-techo-100 p-4 text-right hover:border-techo-700">
+        <span><span class="block text-sm text-tinta-suave">Siguiente · Parada 4</span><span class="font-bold text-techo-900 group-hover:underline">Eventos: Día de la Niñez</span></span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6 shrink-0 text-techo-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
   </main>
 
-  <footer class="site-footer">
-    <p>Techo para Argentina &middot; Diseño y Desarrollo Web &middot; Actividad 2 - Diseño de un Recorrido</p>
+  <footer class="site-footer mt-16 bg-techo-900 text-white">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
+      <div>
+        <img src="logo.png" alt="TECHO" width="147" height="35" class="h-9 w-auto rounded bg-white px-2 py-1">
+        <p class="mt-3 font-titulos text-lg font-bold">Techo para Argentina</p>
+        <p class="mt-1 text-sm text-techo-100">Un recorrido en cinco paradas por los barrios populares donde trabaja TECHO, de la Zona Sur del GBA a la Ciudad de Buenos Aires.</p>
+      </div>
+      <nav aria-label="El recorrido">
+        <h2 class="font-titulos font-bold">El recorrido</h2>
+        <ol class="mt-2 space-y-1 text-sm">
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="vivienda-emergencia.html">1. Vivienda de emergencia</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="infraestructura-comunitaria.html">2. Infraestructura comunitaria</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="vivienda-progresiva.html">3. Vivienda progresiva</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="eventos.html">4. Eventos: Día de la Niñez</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="colectas.html">5. Colectas solidarias</a></li>
+        </ol>
+      </nav>
+      <div>
+        <h2 class="font-titulos font-bold">Más información</h2>
+        <ul class="mt-2 space-y-1 text-sm">
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="sumate.html">Inscribite a una jornada</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="contacto.html">Contacto</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="design-system.html">Design System del sitio</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="https://github.com/agustin1115/Actividad-1-Galer-a-Visual">Repositorio en GitHub</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="https://argentina.techo.org/">Sitio oficial de TECHO Argentina</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="border-t border-white/20 px-4 py-4 text-center text-sm text-techo-100">
+      Proyecto académico · Diseño y Desarrollo Web · Actividad 3 · Grupo 6. No es el sitio oficial de TECHO Argentina.
+    </p>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/paradas.js" defer></script>
+  <script src="js/mapa.js" defer></script>
 </body>
 
 </html>
