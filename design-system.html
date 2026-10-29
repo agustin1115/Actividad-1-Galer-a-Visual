@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Design System del sitio Techo para Argentina: colores, tipografía, componentes, íconos, imágenes y criterios de accesibilidad.">
+  <title>Design System · Techo para Argentina</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-white font-texto leading-relaxed text-tinta antialiased">
+  <a href="#contenido"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[1200] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:font-bold focus:text-techo-900">Saltar al contenido</a>
+
+  <header class="site-header relative z-[1100] bg-techo-900 text-white shadow-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.png" alt="TECHO" width="147" height="35" class="h-9 w-auto rounded bg-white px-2 py-1">
+        <span class="font-titulos text-base font-bold leading-tight sm:text-xl">Techo para Argentina</span>
+      </a>
+      <button type="button" class="nav-toggle inline-flex items-center gap-2 rounded border border-white/60 px-3 py-2 font-bold lg:hidden"
+        aria-expanded="false" aria-controls="menu-principal">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        Menú
+      </button>
+    </div>
+    <nav aria-label="Principal" class="border-t border-white/20">
+      <ul id="menu-principal" class="mx-auto hidden max-w-6xl flex-col gap-1 px-4 py-2 text-[0.95rem] lg:flex lg:flex-row lg:flex-wrap lg:justify-center">
+        <li><a href="index.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Inicio</a></li>
+        <li><a href="vivienda-emergencia.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Vivienda de emergencia</a></li>
+        <li><a href="infraestructura-comunitaria.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Infraestructura comunitaria</a></li>
+        <li><a href="vivienda-progresiva.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Vivienda progresiva</a></li>
+        <li><a href="eventos.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Eventos</a></li>
+        <li><a href="colectas.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Colectas</a></li>
+        <li><a href="sumate.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Sumate</a></li>
+        <li><a href="contacto.html"
+            class="block rounded px-3 py-2 font-bold hover:bg-white hover:text-techo-900 aria-[current=page]:bg-white aria-[current=page]:text-techo-900 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-4">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="bg-techo-50">
+      <div class="mx-auto max-w-6xl px-4 py-8 md:py-12">
+        <nav aria-label="Ruta de navegación" class="text-sm">
+          <ol class="flex flex-wrap items-center gap-1 text-tinta-suave">
+            <li><a href="index.html" class="text-techo-900 underline underline-offset-2 hover:text-naranja-700">Inicio</a></li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">Design System</li>
+          </ol>
+        </nav>
+        <h1 class="mt-6 font-titulos text-3xl font-bold leading-tight text-techo-900 sm:text-4xl">Design System</h1>
+        <p class="mt-4 max-w-3xl text-lg">
+          Las decisiones visuales del sitio, armadas con los mismos componentes y clases de Tailwind
+          que usan las páginas. Los colores y las tipografías están definidos una sola vez, como
+          tokens, en <code class="rounded bg-white px-1 font-mono text-base">js/tailwind.config.js</code>.
+        </p>
+        <nav aria-label="Secciones del Design System" class="mt-6">
+          <ul class="flex flex-wrap gap-2 text-sm">
+            <li><a href="#colores" class="inline-block rounded-full border border-techo-900 bg-white px-3 py-1 font-bold text-techo-900 hover:bg-techo-100">Colores</a></li>
+            <li><a href="#tipografia" class="inline-block rounded-full border border-techo-900 bg-white px-3 py-1 font-bold text-techo-900 hover:bg-techo-100">Tipografía</a></li>
+            <li><a href="#botones" class="inline-block rounded-full border border-techo-900 bg-white px-3 py-1 font-bold text-techo-900 hover:bg-techo-100">Botones</a></li>
+            <li><a href="#formularios" class="inline-block rounded-full border border-techo-900 bg-white px-3 py-1 font-bold text-techo-900 hover:bg-techo-100">Formularios</a></li>
+            <li><a href="#componentes" class="inline-block rounded-full border border-techo-900 bg-white px-3 py-1 font-bold text-techo-900 hover:bg-techo-100">Componentes</a></li>
+            <li><a href="#iconos" class="inline-block rounded-full border border-techo-900 bg-white px-3 py-1 font-bold text-techo-900 hover:bg-techo-100">Íconos</a></li>
+            <li><a href="#imagenes" class="inline-block rounded-full border border-techo-900 bg-white px-3 py-1 font-bold text-techo-900 hover:bg-techo-100">Imágenes y mapa</a></li>
+            <li><a href="#layout" class="inline-block rounded-full border border-techo-900 bg-white px-3 py-1 font-bold text-techo-900 hover:bg-techo-100">Layout</a></li>
+            <li><a href="#accesibilidad" class="inline-block rounded-full border border-techo-900 bg-white px-3 py-1 font-bold text-techo-900 hover:bg-techo-100">Accesibilidad</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl space-y-16 px-4 py-12">
+      <section aria-labelledby="titulo-identidad">
+        <h2 id="titulo-identidad" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Identidad</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+          <div class="flex flex-col items-center gap-3 rounded-xl border border-techo-100 p-8">
+            <img src="logo.png" alt="Logo de TECHO" width="147" height="35" class="h-10 w-auto">
+            <p class="text-sm text-tinta-suave">Logo oficial de TECHO sobre fondo blanco.</p>
+          </div>
+          <div class="flex flex-col items-center gap-3 rounded-xl bg-techo-900 p-8 text-white">
+            <span class="flex items-center gap-3">
+              <img src="logo.png" alt="Logo de TECHO sobre placa blanca" width="147" height="35" class="h-9 w-auto rounded bg-white px-2 py-1">
+              <span class="font-titulos text-xl font-bold">Techo para Argentina</span>
+            </span>
+            <p class="text-sm text-techo-100">Uso en header y footer: placa blanca sobre techo-900, junto al nombre del sitio.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="colores" aria-labelledby="titulo-colores" class="scroll-mt-4">
+        <h2 id="titulo-colores" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Colores</h2>
+        <p class="mt-4 max-w-3xl">Celeste institucional y naranja de acento, como en la Actividad 2, pero con tonos más oscuros donde hay texto: el celeste y el naranja originales no llegaban al contraste mínimo de WCAG AA (4,5:1). Cada muestra indica su uso y su contraste medido.</p>
+        <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-techo-900 text-white"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">techo-900</p>
+              <p class="font-mono text-tinta-suave">#01579b</p>
+              <p class="mt-1">Header, nav, footer, títulos, links y botón secundario</p>
+              <p class="mt-1 text-tinta-suave">Blanco encima 7,4:1 · sobre techo-50 6,9:1</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-techo-700 text-white"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">techo-700</p>
+              <p class="font-mono text-tinta-suave">#0277bd</p>
+              <p class="mt-1">Íconos de navegación y acentos sobre blanco</p>
+              <p class="mt-1 text-tinta-suave">Sobre blanco 4,8:1 (no se usa para texto sobre techo-50: 4,48:1)</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-techo-500 text-white"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">techo-500</p>
+              <p class="font-mono text-tinta-suave">#0288d1</p>
+              <p class="mt-1">Línea del mapa y bordes destacados</p>
+              <p class="mt-1 text-tinta-suave">Solo decorativo o texto grande (3,86:1)</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-techo-300 text-tinta"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">techo-300</p>
+              <p class="font-mono text-tinta-suave">#4fc3f7</p>
+              <p class="mt-1">Bordes de fotos, subrayado de títulos, contornos</p>
+              <p class="mt-1 text-tinta-suave">Solo decorativo: nunca detrás de texto blanco (2:1)</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-techo-100 text-tinta"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">techo-100</p>
+              <p class="font-mono text-tinta-suave">#e1f5fe</p>
+              <p class="mt-1">Hover de botones claros y texto claro sobre techo-900</p>
+              <p class="mt-1 text-tinta-suave">Sobre techo-900 6,59:1</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-techo-50 text-tinta"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">techo-50</p>
+              <p class="font-mono text-tinta-suave">#f2f8fb</p>
+              <p class="mt-1">Fondo de secciones alternadas y bloques de datos</p>
+              <p class="mt-1 text-tinta-suave">Texto tinta encima 14,85:1</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-naranja-700 text-white"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">naranja-700</p>
+              <p class="font-mono text-tinta-suave">#c2410c</p>
+              <p class="mt-1">Botón primario, etiquetas "Parada N", paso actual</p>
+              <p class="mt-1 text-tinta-suave">Blanco encima 5,18:1 (antes #ef6c00 daba 3,08:1)</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-naranja-500 text-white"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">naranja-500</p>
+              <p class="font-mono text-tinta-suave">#ef6c00</p>
+              <p class="mt-1">Halo del marcador y del paso actual</p>
+              <p class="mt-1 text-tinta-suave">Solo decorativo</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-naranja-50 text-tinta"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">naranja-50</p>
+              <p class="font-mono text-tinta-suave">#fff4e5</p>
+              <p class="mt-1">Fondo de la caja de recomendaciones</p>
+              <p class="mt-1 text-tinta-suave">naranja-700 encima 4,77:1</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-tinta text-white"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">tinta</p>
+              <p class="font-mono text-tinta-suave">#222222</p>
+              <p class="mt-1">Texto principal</p>
+              <p class="mt-1 text-tinta-suave">Sobre blanco 15,91:1</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-tinta-suave text-white"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">tinta-suave</p>
+              <p class="font-mono text-tinta-suave">#555555</p>
+              <p class="mt-1">Texto secundario, ayudas y epígrafes; borde de campos</p>
+              <p class="mt-1 text-tinta-suave">Sobre blanco 7,46:1</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-red-700 text-white"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">red-700 (Tailwind)</p>
+              <p class="font-mono text-tinta-suave">#b91c1c</p>
+              <p class="mt-1">Errores de formulario (siempre con ícono y texto)</p>
+              <p class="mt-1 text-tinta-suave">Sobre blanco 6,47:1</p>
+            </div>
+          </li>
+          <li class="overflow-hidden rounded-xl border border-techo-100">
+            <div class="flex h-20 items-end p-3 bg-green-800 text-white"><span class="font-bold">Aa</span></div>
+            <div class="p-3 text-sm">
+              <p class="font-bold">green-800 (Tailwind)</p>
+              <p class="font-mono text-tinta-suave">#166534</p>
+              <p class="mt-1">Confirmaciones (siempre con ícono y texto)</p>
+              <p class="mt-1 text-tinta-suave">Sobre blanco 7,13:1</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="tipografia" aria-labelledby="titulo-tipografia" class="scroll-mt-4">
+        <h2 id="titulo-tipografia" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Tipografía</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <div class="rounded-xl border border-techo-100 p-5">
+            <p class="text-sm font-bold uppercase tracking-wide text-tinta-suave">Títulos · font-titulos</p>
+            <p class="mt-2 font-titulos text-3xl font-bold text-techo-900">Trebuchet MS</p>
+            <p class="mt-1 text-sm text-tinta-suave">Respaldo: Verdana, sans-serif. Fuente del sistema: no hay que descargar nada.</p>
+          </div>
+          <div class="rounded-xl border border-techo-100 p-5">
+            <p class="text-sm font-bold uppercase tracking-wide text-tinta-suave">Texto · font-texto</p>
+            <p class="mt-2 text-3xl">Arial</p>
+            <p class="mt-1 text-sm text-tinta-suave">Respaldo: Helvetica, sans-serif. Interlineado relajado (1,625) para lectura larga.</p>
+          </div>
+        </div>
+        <dl class="mt-6 divide-y divide-techo-100 rounded-xl border border-techo-100">
+          <div class="grid gap-2 p-4 md:grid-cols-4"><dt class="text-sm text-tinta-suave">H1 · text-3xl → sm:text-4xl</dt><dd class="font-titulos text-3xl font-bold text-techo-900 sm:text-4xl md:col-span-3">Vivienda de emergencia</dd></div>
+          <div class="grid gap-2 p-4 md:grid-cols-4"><dt class="text-sm text-tinta-suave">H2 de sección · text-2xl → sm:text-3xl</dt><dd class="font-titulos text-2xl font-bold text-techo-900 sm:text-3xl md:col-span-3">Mapa del recorrido</dd></div>
+          <div class="grid gap-2 p-4 md:grid-cols-4"><dt class="text-sm text-tinta-suave">H3 · text-xl</dt><dd class="font-titulos text-xl font-bold text-techo-900 md:col-span-3">Paradas en orden</dd></div>
+          <div class="grid gap-2 p-4 md:grid-cols-4"><dt class="text-sm text-tinta-suave">Etiqueta · text-sm uppercase</dt><dd class="font-titulos text-sm font-bold uppercase tracking-wider text-naranja-700 md:col-span-3">Parada 4 de 5</dd></div>
+          <div class="grid gap-2 p-4 md:grid-cols-4"><dt class="text-sm text-tinta-suave">Bajada · text-lg</dt><dd class="text-lg md:col-span-3">Cinco paradas para conocer de cerca cómo trabaja TECHO.</dd></div>
+          <div class="grid gap-2 p-4 md:grid-cols-4"><dt class="text-sm text-tinta-suave">Texto · text-base</dt><dd class="md:col-span-3">Las obras se deciden junto a los vecinos en mesas de trabajo barrial.</dd></div>
+          <div class="grid gap-2 p-4 md:grid-cols-4"><dt class="text-sm text-tinta-suave">Secundario · text-sm tinta-suave</dt><dd class="text-sm text-tinta-suave md:col-span-3">Entrega de la vivienda: la familia y los voluntarios celebran la casa terminada.</dd></div>
+        </dl>
+      </section>
+
+      <section id="botones" aria-labelledby="titulo-botones" class="scroll-mt-4">
+        <h2 id="titulo-botones" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Botones y enlaces</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <div class="rounded-xl border border-techo-100 p-5">
+            <h3 class="font-titulos text-lg font-bold text-techo-900">Primario</h3>
+            <p class="mt-1 text-sm text-tinta-suave">La acción principal de cada pantalla. Hover: techo-900.</p>
+            <div class="mt-4 flex flex-wrap items-center gap-3">
+              <a href="#botones" class="inline-flex items-center gap-2 rounded-md bg-naranja-700 px-5 py-3 font-bold text-white shadow hover:bg-techo-900">Inscribite a esta jornada</a>
+              <span class="inline-flex items-center gap-2 rounded-md bg-naranja-700 px-5 py-3 font-bold text-white shadow hover:bg-techo-900 outline outline-[3px] outline-offset-2 outline-techo-900">Con foco</span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-techo-100 p-5">
+            <h3 class="font-titulos text-lg font-bold text-techo-900">Secundario</h3>
+            <p class="mt-1 text-sm text-tinta-suave">Acciones alternativas (volver, ver el mapa). Hover: techo-100.</p>
+            <div class="mt-4 flex flex-wrap items-center gap-3">
+              <a href="#botones" class="inline-flex items-center gap-2 rounded-md border-2 border-techo-900 bg-white px-5 py-3 font-bold text-techo-900 hover:bg-techo-100">Ver el mapa</a>
+              <span class="inline-flex items-center gap-2 rounded-md border-2 border-techo-900 bg-white px-5 py-3 font-bold text-techo-900 hover:bg-techo-100 outline outline-[3px] outline-offset-2 outline-techo-900">Con foco</span>
+            </div>
+          </div>
+          <div class="rounded-xl bg-techo-900 p-5 text-white">
+            <h3 class="font-titulos text-lg font-bold">Sobre fondo oscuro</h3>
+            <p class="mt-1 text-sm text-techo-100">En bandas de llamada a la acción. El foco se dibuja en blanco.</p>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="#botones" class="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 font-bold text-techo-900 hover:bg-techo-100">Ir a Sumate</a>
+            </div>
+          </div>
+          <div class="rounded-xl border border-techo-100 p-5">
+            <h3 class="font-titulos text-lg font-bold text-techo-900">Enlace en texto</h3>
+            <p class="mt-3">Siempre subrayado, no solo de color: <a href="#botones">TECHO Argentina, Reporte 2023</a>. Hover: naranja-700.</p>
+            <p class="mt-3 text-sm text-tinta-suave">Los enlaces externos llevan un texto oculto "(sitio externo)" para lectores de pantalla.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="formularios" aria-labelledby="titulo-formularios" class="scroll-mt-4">
+        <h2 id="titulo-formularios" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Formularios</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <div class="rounded-xl border border-techo-100 p-5">
+            <h3 class="font-titulos text-lg font-bold text-techo-900">Campo</h3>
+            <label for="ds-nombre" class="mt-3 block font-bold">Nombre y apellido <span class="font-normal text-tinta-suave">(obligatorio)</span></label>
+            <input type="text" id="ds-nombre" value="Ana Pérez" aria-describedby="ds-ayuda" class="mt-1 block w-full rounded-md border-2 border-tinta-suave bg-white px-3 py-2 aria-[invalid=true]:border-red-700 aria-[invalid=true]:bg-red-50">
+            <p id="ds-ayuda" class="mt-1 text-sm text-tinta-suave">Texto de ayuda debajo del campo.</p>
+          </div>
+          <div class="rounded-xl border border-techo-100 p-5">
+            <h3 class="font-titulos text-lg font-bold text-techo-900">Campo con error</h3>
+            <label for="ds-email" class="mt-3 block font-bold">Correo electrónico <span class="font-normal text-tinta-suave">(obligatorio)</span></label>
+            <input type="email" id="ds-email" value="ana@correo" aria-invalid="true" aria-describedby="ds-error" class="mt-1 block w-full rounded-md border-2 border-tinta-suave bg-white px-3 py-2 aria-[invalid=true]:border-red-700 aria-[invalid=true]:bg-red-50">
+            <p id="ds-error" class="mt-1 text-sm font-bold text-red-700"><span aria-hidden="true">⚠ </span>El correo no parece válido: revisá que tenga @ y un dominio.</p>
+          </div>
+          <div class="rounded-xl border border-techo-100 p-5">
+            <h3 class="font-titulos text-lg font-bold text-techo-900">Opción tipo tarjeta</h3>
+            <div class="mt-3 grid gap-3">
+              <label class="flex cursor-pointer gap-3 rounded-lg border-2 border-techo-100 bg-white p-4 hover:border-techo-500 has-[:checked]:border-techo-700 has-[:checked]:bg-techo-50">
+                <input type="radio" name="ds-jornada" checked class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                <span><span class="block font-bold">Seleccionada</span><span class="block text-sm text-tinta-suave">Borde techo-700 y fondo techo-50</span></span>
+              </label>
+              <label class="flex cursor-pointer gap-3 rounded-lg border-2 border-techo-100 bg-white p-4 hover:border-techo-500 has-[:checked]:border-techo-700 has-[:checked]:bg-techo-50">
+                <input type="radio" name="ds-jornada" class="mt-1 h-5 w-5 shrink-0 accent-naranja-700">
+                <span><span class="block font-bold">Sin seleccionar</span><span class="block text-sm text-tinta-suave">Toda la tarjeta es clickeable</span></span>
+              </label>
+            </div>
+          </div>
+          <div class="space-y-4 rounded-xl border border-techo-100 p-5">
+            <h3 class="font-titulos text-lg font-bold text-techo-900">Mensajes</h3>
+            <div class="rounded-lg border-2 border-red-700 bg-red-50 p-4 text-sm">
+              <p class="font-bold text-red-700"><span aria-hidden="true">⚠ </span>Revisá estos datos antes de continuar:</p>
+              <ul class="mt-1 list-disc pl-5 text-red-700"><li>Elegí la fecha de la jornada.</li></ul>
+            </div>
+            <div class="rounded-lg border-2 border-green-800 bg-green-50 p-4 text-sm">
+              <p class="flex items-center gap-2 font-bold text-green-800"><svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg> ¡Listo! Tu solicitud quedó registrada</p>
+            </div>
+            <div class="flex gap-3 rounded-lg border border-techo-300 bg-techo-50 p-4 text-sm">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-techo-900" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+              <p><strong>Simulación.</strong> Aviso informativo, siempre visible antes del formulario.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="componentes" aria-labelledby="titulo-componentes" class="scroll-mt-4">
+        <h2 id="titulo-componentes" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Componentes</h2>
+        <div class="mt-6 grid gap-6 lg:grid-cols-3">
+          <div>
+            <h3 class="font-titulos text-lg font-bold text-techo-900">Tarjeta de parada</h3>
+            <article class="mt-3 flex flex-col overflow-hidden rounded-xl border border-techo-100 bg-white shadow-sm">
+              <img src="img/evento-dia-nino-1.jpeg" alt="Chicos y chicas sentados en una plaza escuchando a un voluntario" loading="lazy" class="aspect-[4/3] w-full object-cover">
+              <div class="p-5">
+                <p class="text-sm font-bold uppercase tracking-wide text-naranja-700">Parada 4 · Avellaneda</p>
+                <p class="mt-1 font-titulos text-xl font-bold text-techo-900">Eventos: Día de la Niñez</p>
+                <p class="mt-2">Una tarde de juegos y meriendas para las infancias del barrio.</p>
+                <a href="eventos.html" class="mt-4 inline-flex rounded-md bg-naranja-700 px-4 py-2 font-bold text-white hover:bg-techo-900">Ver parada 4</a>
+              </div>
+            </article>
+          </div>
+          <div class="space-y-6 lg:col-span-2">
+            <div>
+              <h3 class="font-titulos text-lg font-bold text-techo-900">Ruta de navegación y recorrido</h3>
+              <div class="mt-3 rounded-xl bg-techo-50 p-4">
+                <p class="text-sm text-tinta-suave"><a href="index.html" class="text-techo-900 underline underline-offset-2">Inicio</a> › <a href="index.html#recorrido" class="text-techo-900 underline underline-offset-2">Recorrido</a> › Parada 2</p>
+                <ol aria-label="Ejemplo de recorrido" class="relative mt-4 flex justify-between gap-1 before:absolute before:left-[10%] before:right-[10%] before:top-5 before:border-t-2 before:border-dashed before:border-techo-300">
+                  <li class="relative z-10 flex flex-1 flex-col items-center gap-1 text-center"><span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-techo-900 bg-white font-titulos font-bold text-techo-900">1</span><span class="text-xs text-tinta-suave">Visitada</span></li>
+                  <li class="relative z-10 flex flex-1 flex-col items-center gap-1 text-center"><span class="flex h-10 w-10 items-center justify-center rounded-full bg-naranja-700 font-titulos font-bold text-white ring-4 ring-naranja-500/30">2</span><span class="text-xs font-bold text-naranja-700">Actual</span></li>
+                  <li class="relative z-10 flex flex-1 flex-col items-center gap-1 text-center"><span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-techo-900 bg-white font-titulos font-bold text-techo-900">3</span><span class="text-xs text-tinta-suave">Siguiente</span></li>
+                </ol>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-titulos text-lg font-bold text-techo-900">Datos rápidos</h3>
+              <ul class="mt-3 grid gap-3 sm:grid-cols-3">
+                <li class="flex items-start gap-2 rounded-lg bg-techo-50 p-3"><svg aria-hidden="true" viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><span class="block text-xs font-bold uppercase tracking-wide text-tinta-suave">Duración</span>Un día de obra</span></li>
+                <li class="flex items-start gap-2 rounded-lg bg-techo-50 p-3"><svg aria-hidden="true" viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span><span class="block text-xs font-bold uppercase tracking-wide text-tinta-suave">Horario</span>8:30 a 17 h</span></li>
+                <li class="flex items-start gap-2 rounded-lg bg-techo-50 p-3"><svg aria-hidden="true" viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg><span><span class="block text-xs font-bold uppercase tracking-wide text-tinta-suave">Acceso</span>Con inscripción</span></li>
+              </ul>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <h3 class="font-titulos text-lg font-bold text-techo-900">Datos útiles</h3>
+                <dl class="mt-3 space-y-2 rounded-xl border border-techo-300 bg-techo-50 p-4">
+                  <div><dt class="font-titulos font-bold text-techo-900">Ubicación</dt><dd>Barrio popular de Quilmes</dd></div>
+                  <div><dt class="font-titulos font-bold text-techo-900">Requisitos</dt><dd>Sin experiencia previa</dd></div>
+                </dl>
+              </div>
+              <div>
+                <h3 class="font-titulos text-lg font-bold text-techo-900">Recomendación</h3>
+                <div class="mt-3 rounded-r-lg border-l-4 border-naranja-700 bg-naranja-50 p-4">
+                  <p>Llevá ropa que se pueda ensuciar, protector solar y agua propia.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="iconos" aria-labelledby="titulo-iconos" class="scroll-mt-4">
+        <h2 id="titulo-iconos" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Íconos</h2>
+        <p class="mt-4 max-w-3xl">Íconos lineales propios en SVG, dibujados con trazo de 2 px y puntas redondeadas, el mismo estilo que el mapa de la Actividad 2. Toman el color del texto (currentColor) y siempre acompañan un texto: son decorativos (aria-hidden) y nunca son la única forma de transmitir información.</p>
+        <ul class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-5">
+          <li class="flex flex-col items-center gap-2 rounded-lg border border-techo-100 p-4 text-center text-sm">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Duración
+          </li>
+          <li class="flex flex-col items-center gap-2 rounded-lg border border-techo-100 p-4 text-center text-sm">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+            Fecha / horario
+          </li>
+          <li class="flex flex-col items-center gap-2 rounded-lg border border-techo-100 p-4 text-center text-sm">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+            Acceso / confirmado
+          </li>
+          <li class="flex flex-col items-center gap-2 rounded-lg border border-techo-100 p-4 text-center text-sm">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Ubicación
+          </li>
+          <li class="flex flex-col items-center gap-2 rounded-lg border border-techo-100 p-4 text-center text-sm">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21 20c0-2.8-1.8-5.1-4.3-5.8"/></svg>
+            Personas
+          </li>
+          <li class="flex flex-col items-center gap-2 rounded-lg border border-techo-100 p-4 text-center text-sm">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            Siguiente
+          </li>
+          <li class="flex flex-col items-center gap-2 rounded-lg border border-techo-100 p-4 text-center text-sm">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+            Anterior
+          </li>
+          <li class="flex flex-col items-center gap-2 rounded-lg border border-techo-100 p-4 text-center text-sm">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            Menú
+          </li>
+          <li class="flex flex-col items-center gap-2 rounded-lg border border-techo-100 p-4 text-center text-sm">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+            Información
+          </li>
+          <li class="flex flex-col items-center gap-2 rounded-lg border border-techo-100 p-4 text-center text-sm">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 text-naranja-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 16-3-7-7-1z"/></svg>
+            Enviar
+          </li>
+        </ul>
+      </section>
+
+      <section id="imagenes" aria-labelledby="titulo-imagenes" class="scroll-mt-4">
+        <h2 id="titulo-imagenes" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Imágenes y mapa</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <div>
+            <figure>
+              <img src="img/vivienda-progresiva-3.jpeg" alt="Pared de ladrillo en obra junto a una pared ya revestida de la misma vivienda" loading="lazy" class="aspect-[4/3] w-full rounded-lg border-[3px] border-techo-300 object-cover">
+              <figcaption class="mt-2 text-center text-sm leading-snug text-tinta-suave">Así se ve la casa creciendo: la pared de ladrillo en obra, junto a la que ya está terminada.</figcaption>
+            </figure>
+            <p class="mt-4">Fotografías propias y documentales de jornadas reales (no de stock), recortadas en 4:3, con borde celeste de 3 px y esquinas redondeadas. Cada foto lleva texto alternativo descriptivo y un epígrafe breve escrito desde la experiencia.</p>
+          </div>
+          <div>
+            <div class="flex items-center gap-6 rounded-xl border-2 border-techo-300 bg-techo-50 p-6">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-techo-900 font-titulos font-bold text-white shadow-lg">1</span>
+              <span class="w-16 border-t-4 border-dashed border-techo-500"></span>
+              <span class="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-naranja-700 font-titulos text-lg font-bold text-white shadow-lg ring-4 ring-naranja-500/40">2</span>
+            </div>
+            <p class="mt-4">Mapa con Leaflet y OpenStreetMap. Cada parada es un marcador numerado (el número indica el orden sugerido, no solo el color); la parada en la que estás se agranda y pasa a naranja. Una línea punteada techo-500 une las paradas en orden. Al lado del mapa siempre hay una lista con las paradas y las distancias, que funciona como alternativa en texto.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="layout" aria-labelledby="titulo-layout" class="scroll-mt-4">
+        <h2 id="titulo-layout" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Layout y responsive</h2>
+        <p class="mt-4 max-w-3xl">Diseño mobile first: los estilos base son para celular y se agregan columnas con los breakpoints de Tailwind. El contenido se centra en un contenedor de 72 rem (max-w-6xl) con 16 px de margen lateral.</p>
+        <div class="mt-6 overflow-x-auto">
+          <table class="w-full min-w-[36rem] border-collapse text-left text-sm">
+            <caption class="sr-only">Comportamiento del sitio en cada breakpoint</caption>
+            <thead><tr class="bg-techo-900 text-white"><th scope="col" class="p-3">Breakpoint</th><th scope="col" class="p-3">Ancho</th><th scope="col" class="p-3">Qué cambia</th></tr></thead>
+            <tbody class="divide-y divide-techo-100">
+              <tr><th scope="row" class="p-3">Base</th><td class="p-3">menos de 640 px</td><td class="p-3">Una columna, menú desplegable, fotos de a una.</td></tr>
+              <tr><th scope="row" class="p-3">sm</th><td class="p-3">640 px</td><td class="p-3">Tarjetas y fotos de a dos, datos rápidos en fila.</td></tr>
+              <tr><th scope="row" class="p-3">md</th><td class="p-3">768 px</td><td class="p-3">Cabecera de cada página en dos columnas (texto + foto).</td></tr>
+              <tr><th scope="row" class="p-3">lg</th><td class="p-3">1024 px</td><td class="p-3">Menú completo visible, grillas de tres columnas, mapa al lado de la lista, resumen del aporte fijo al costado.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="accesibilidad" aria-labelledby="titulo-accesibilidad" class="scroll-mt-4">
+        <h2 id="titulo-accesibilidad" class="border-b-[3px] border-techo-300 pb-2 font-titulos text-2xl font-bold text-techo-900 sm:text-3xl">Accesibilidad</h2>
+        <ul class="mt-4 grid gap-3 md:grid-cols-2">
+          <li class="rounded-lg border border-techo-100 p-4"><strong>Contraste AA:</strong> todo texto sobre su fondo supera 4,5:1 (ver muestras de color).</li>
+          <li class="rounded-lg border border-techo-100 p-4"><strong>Foco visible:</strong> anillo de 3 px techo-900 con borde blanco, visible sobre fondos claros y oscuros.</li>
+          <li class="rounded-lg border border-techo-100 p-4"><strong>Teclado:</strong> enlace "Saltar al contenido", menú con aria-expanded que se cierra con Escape, marcadores del mapa enfocables.</li>
+          <li class="rounded-lg border border-techo-100 p-4"><strong>Ubicación:</strong> la página actual se marca con aria-current y subrayado; la parada actual, con número, color y tamaño.</li>
+          <li class="rounded-lg border border-techo-100 p-4"><strong>Formularios:</strong> etiquetas asociadas, "(obligatorio)" escrito, errores con ícono y texto, resumen de errores enlazado a cada campo.</li>
+          <li class="rounded-lg border border-techo-100 p-4"><strong>Estructura:</strong> un solo h1 por página, encabezados en orden, landmarks (header, nav, main, aside, footer) y textos alternativos en todas las fotos.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer mt-16 bg-techo-900 text-white">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
+      <div>
+        <img src="logo.png" alt="TECHO" width="147" height="35" class="h-9 w-auto rounded bg-white px-2 py-1">
+        <p class="mt-3 font-titulos text-lg font-bold">Techo para Argentina</p>
+        <p class="mt-1 text-sm text-techo-100">Un recorrido en cinco paradas por los barrios populares donde trabaja TECHO, de la Zona Sur del GBA a la Ciudad de Buenos Aires.</p>
+      </div>
+      <nav aria-label="El recorrido">
+        <h2 class="font-titulos font-bold">El recorrido</h2>
+        <ol class="mt-2 space-y-1 text-sm">
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="vivienda-emergencia.html">1. Vivienda de emergencia</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="infraestructura-comunitaria.html">2. Infraestructura comunitaria</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="vivienda-progresiva.html">3. Vivienda progresiva</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="eventos.html">4. Eventos: Día de la Niñez</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="colectas.html">5. Colectas solidarias</a></li>
+        </ol>
+      </nav>
+      <div>
+        <h2 class="font-titulos font-bold">Más información</h2>
+        <ul class="mt-2 space-y-1 text-sm">
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="sumate.html">Inscribite a una jornada</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="contacto.html">Contacto</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="design-system.html">Design System del sitio</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="https://github.com/agustin1115/Actividad-1-Galer-a-Visual">Repositorio en GitHub</a></li>
+          <li><a class="underline underline-offset-2 hover:text-techo-100" href="https://argentina.techo.org/">Sitio oficial de TECHO Argentina</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="border-t border-white/20 px-4 py-4 text-center text-sm text-techo-100">
+      Proyecto académico · Diseño y Desarrollo Web · Actividad 3 · Grupo 6. No es el sitio oficial de TECHO Argentina.
+    </p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>
