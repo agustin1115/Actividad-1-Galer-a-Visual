@@ -28,7 +28,7 @@ function iconoParada(parada, esActual) {
 
 function crearMapaRecorrido(contenedor, numeroActual) {
   if (typeof L === 'undefined') {
-    contenedor.innerHTML = '<p class="p-4 text-sm text-tinta-suave">No se pudo cargar el mapa. Podés ver el orden y las distancias en la lista de paradas.</p>';
+    contenedor.innerHTML = '<p class="p-4 text-sm text-tinta-suave">No se pudo cargar el mapa interactivo. Revisá tu conexión y volvé a cargar la página.</p>';
     return;
   }
 
