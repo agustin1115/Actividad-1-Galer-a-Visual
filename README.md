@@ -54,6 +54,9 @@ y la dirección exacta se comparte con quienes se inscriben. Las coordenadas est
   confirmación con número de solicitud. **Es una simulación:** no se envían datos ni se cobra nada.
 - **Contacto (`contacto.html`):** nombre, correo, motivo y mensaje, con validación y confirmación.
   **El envío es simulado.**
+- **Preguntas frecuentes (`preguntas-frecuentes.html`):** buscador en lenguaje natural con filtro por
+  tema y respuestas desplegables, armadas con el contenido del sitio y con un enlace a la página
+  relacionada. Funciona en el navegador, sin servicios externos.
 - **Design System (`design-system.html`):** colores con su contraste, tipografía, botones,
   formularios, componentes, íconos, imágenes, mapa, breakpoints y accesibilidad.
 
@@ -87,6 +90,7 @@ vivienda-progresiva.html           Parada 3
 eventos.html                       Parada 4
 colectas.html                      Parada 5
 sumate.html                        Cierre: inscripción y formas de sumarse
+preguntas-frecuentes.html          Buscador de preguntas frecuentes
 contacto.html                      Formulario de contacto
 design-system.html                 Design System
 css/style.css                      Foco visible y ajustes del mapa
@@ -97,6 +101,7 @@ js/mapa.js                         Mapa del recorrido y lista de distancias
 js/formularios.js                  Funciones de validación compartidas
 js/inscripcion.js                  Cálculo del aporte, conversión y flujo de inscripción
 js/contacto.js                     Validación y confirmación del contacto
+js/preguntas.js                    Preguntas, búsqueda y filtro por tema
 img/                               Fotos propias de las jornadas
 logo.png                           Logo de TECHO
 ```
@@ -117,7 +122,7 @@ Hace falta conexión a internet, porque Tailwind, Leaflet y el mapa se cargan de
 | Integrante | Contribución |
 |---|---|
 | Díaz Seoane, Agustín Edgardo | Galería "Barrios en Construcción" (Actividad 1), base del sitio, guion y fotos de la parada 1. |
-| Ferrario, Lorenzo | Guion y fotos de la parada 2 (veredas y espacio recreativo). |
+| Ferrario, Lorenzo | Guion y fotos de la parada 2 (veredas y espacio recreativo). Actividad 3: preguntas frecuentes. |
 | Calderón, Felipe | Guion y fotos de la parada 3. |
 | Fernández, Nicolás Esteban | Guion y fotos de la parada 4. Actividad 3: migración a Tailwind, mapa del recorrido, formularios de inscripción y contacto, Design System. |
 | Srolovich, Lara | Guion y fotos de la parada 5. |
