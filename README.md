@@ -8,7 +8,7 @@ Gran Buenos Aires a la Ciudad de Buenos Aires.
 - **Sitio publicado (GitHub Pages):** https://agustin1115.github.io/Actividad-1-Galer-a-Visual/
 - **Repositorio:** https://github.com/agustin1115/Actividad-1-Galer-a-Visual
 - **Design System:** https://agustin1115.github.io/Actividad-1-Galer-a-Visual/design-system.html
-- **Prototipo navegable (Figma):** https://www.figma.com/design/HZvIjLjjhKShU2jYLi5Dzn
+- **Prototipo navegable (Figma):** https://www.figma.com/proto/HZvIjLjjhKShU2jYLi5Dzn
 
 ## Objetivo
 
