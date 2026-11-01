@@ -1,7 +1,7 @@
 var TIPO_DE_CAMBIO = {
-  valor: 1520,
+  valor: 1560,
   fuente: 'Banco de la Nación Argentina, dólar oficial, valor de venta',
-  fecha: '05/08/2026'
+  fecha: '30/10/2026'
 };
 
 var MAXIMO_PERSONAS = 10;

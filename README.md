@@ -35,7 +35,7 @@ de jornadas reales de voluntariado, y del diseño grupal de la Actividad 2.
 | 4 | Eventos: Día de la Niñez | Avellaneda | Nicolás Fernández |
 | 5 | Colectas solidarias | Ciudad de Buenos Aires | Lara Srolovich |
 
-Las ubicaciones son aproximadas, por localidad: las jornadas se hacen dentro de barrios populares
+Las ubicaciones son aproximadas y representativas de la zona de trabajo de TECHO, por localidad: las jornadas se hacen dentro de barrios populares
 y la dirección exacta se comparte con quienes se inscriben. Las coordenadas están en `js/paradas.js`.
 
 ## Funcionalidades
@@ -129,6 +129,12 @@ Hace falta conexión a internet, porque Tailwind, Leaflet y el mapa se cargan de
 - [argentina.techo.org/colecta](https://argentina.techo.org/colecta/)
 - [argentina.techo.org/sumate](https://argentina.techo.org/sumate/)
 - [argentina.techo.org/voluntariado](https://argentina.techo.org/voluntariado/)
+
+Vivienda progresiva (Felipe Calderón): la descripción oficial citada en la página sale de
+`que-hacemos`, y el contacto para coordinar (info.argentina@techo.org) de `voluntariado`.
+
+Eventos y Colectas no tienen una página oficial detallada en el sitio nacional de TECHO:
+para esos dos guiones, la fuente es la experiencia real de quien haya participado.
 
 Las fotos son propias, tomadas por los integrantes en jornadas reales. El logo es marca de TECHO y
 se usa con fines académicos: este sitio no es el sitio oficial de TECHO Argentina.
