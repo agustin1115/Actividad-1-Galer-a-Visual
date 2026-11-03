@@ -79,6 +79,14 @@ function activarValidacionEnVivo(formulario, validadores) {
     }
   }
 
+  // Al hacer clic en "Enviar", el campo en el que se estaba escribiendo pierde el foco y su error
+  // aparece y mueve el botón: el clic se perdía. Evitamos que el botón le saque el foco al campo.
+  formulario.querySelectorAll('button[type="submit"]').forEach(function (boton) {
+    boton.addEventListener('mousedown', function (evento) {
+      evento.preventDefault();
+    });
+  });
+
   formulario.addEventListener('focusout', validarUno);
   formulario.addEventListener('input', validarUno);
   formulario.addEventListener('change', validarUno);

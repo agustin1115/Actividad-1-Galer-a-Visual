@@ -50,7 +50,7 @@ y la dirección exacta se comparte con quienes se inscriben. Las coordenadas est
   paradas (ruta de navegación, recorrido 1 a 5 y anterior/siguiente).
 - **Inscripción a una jornada (`sumate.html`):** elección de jornada, fecha (solo fines de semana),
   cantidad de personas y adicionales; cálculo automático del aporte en pesos y su equivalente en
-  dólares (tipo de cambio, fuente y fecha a la vista); validación; resumen antes de confirmar y
+  dólares (tipo de cambio obtenido de una API, con fuente y fecha a la vista); validación; resumen antes de confirmar y
   confirmación con número de solicitud. **Es una simulación:** no se envían datos ni se cobra nada.
 - **Contacto (`contacto.html`):** nombre, correo, motivo y mensaje, con validación y confirmación.
   **El envío es simulado.**
@@ -76,9 +76,12 @@ y la dirección exacta se comparte con quienes se inscriben. Las coordenadas est
 | [Tailwind CSS Play CDN](https://cdn.tailwindcss.com) | Estilos |
 | [Leaflet 1.9.4](https://leafletjs.com/) (unpkg) | Mapa interactivo |
 | [OpenStreetMap](https://www.openstreetmap.org/copyright) | Mosaicos del mapa (© colaboradores de OpenStreetMap) |
+| [dolarapi.com](https://dolarapi.com/) | Cotización del dólar oficial para la conversión a pesos |
 
-El tipo de cambio del formulario de inscripción es un valor de referencia del Banco de la Nación
-Argentina (dólar oficial, venta) con su fecha, definido en `js/inscripcion.js`.
+El tipo de cambio del formulario de inscripción se obtiene al cargar la página desde la API pública
+[dolarapi.com](https://dolarapi.com/) (dólar oficial, valor de venta), y se muestra junto con su
+fuente y la fecha de actualización. Si la API no responde, el formulario usa un valor de referencia
+fijo del Banco de la Nación Argentina, con su fecha, definido en `js/inscripcion.js`.
 
 ## Estructura del proyecto
 
@@ -123,7 +126,7 @@ Hace falta conexión a internet, porque Tailwind, Leaflet y el mapa se cargan de
 |---|---|
 | Díaz Seoane, Agustín Edgardo | Galería "Barrios en Construcción" (Actividad 1), base del sitio, guion y fotos de la parada 1. |
 | Ferrario, Lorenzo | Guion y fotos de la parada 2 (veredas y espacio recreativo). Actividad 3: preguntas frecuentes. |
-| Calderón, Felipe | Guion y fotos de la parada 3. |
+| Calderón, Felipe | Guion y fotos de la parada 3. Actividad 3: integración de la API de cotización del dólar en la inscripción, corrección del clic perdido en el botón de envío de los formularios, ícono del sitio en todas las páginas y verificación de las fuentes de la parada 3. |
 | Fernández, Nicolás Esteban | Guion y fotos de la parada 4. Actividad 3: migración a Tailwind, mapa del recorrido, formularios de inscripción y contacto, Design System. |
 | Srolovich, Lara | Guion y fotos de la parada 5. |
 
@@ -136,7 +139,9 @@ Hace falta conexión a internet, porque Tailwind, Leaflet y el mapa se cargan de
 - [argentina.techo.org/voluntariado](https://argentina.techo.org/voluntariado/)
 
 Vivienda progresiva (Felipe Calderón): la descripción oficial citada en la página sale de
-`que-hacemos`, y el contacto para coordinar (info.argentina@techo.org) de `voluntariado`.
+`que-hacemos`, el tamaño (18 m² ampliables a 36 m² o más) de una nota de
+[La Capital](https://www.lacapital.com.ar/fnga/techo-argentina-avanza-un-nuevo-modelo-vivienda-sostenible-n10273301.html)
+y el contacto para coordinar (info.argentina@techo.org) de `voluntariado`.
 
 Eventos y Colectas no tienen una página oficial detallada en el sitio nacional de TECHO:
 para esos dos guiones, la fuente es la experiencia real de quien haya participado.
@@ -147,5 +152,6 @@ se usa con fines académicos: este sitio no es el sitio oficial de TECHO Argenti
 ## Uso de IA
 
 Se utilizó **Claude Code** como herramienta de apoyo para la corrección y escritura de código
-(HTML, Tailwind y JavaScript), la investigación de datos en techo.org y el versionado en Git/GitHub.
+(HTML, Tailwind y JavaScript), la investigación de datos en techo.org, las pruebas del sitio, la
+verificación de fuentes, la preparación de los documentos de entrega y el versionado en Git/GitHub.
 Las decisiones de contenido, diseño y estructura del sitio son del equipo.

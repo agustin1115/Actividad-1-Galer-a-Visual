@@ -1,8 +1,11 @@
+// Valor de respaldo: se usa si la API de cotización no responde.
 var TIPO_DE_CAMBIO = {
   valor: 1560,
-  fuente: 'Banco de la Nación Argentina, dólar oficial, valor de venta',
+  fuente: 'Banco de la Nación Argentina, dólar oficial, valor de venta (valor de referencia fijo)',
   fecha: '30/10/2026'
 };
+
+var URL_COTIZACION = 'https://dolarapi.com/v1/dolares/oficial';
 
 var MAXIMO_PERSONAS = 10;
 var DIAS_DE_ANTICIPACION = 180;
@@ -16,6 +19,32 @@ var cajaErrores = document.getElementById('errores-inscripcion');
 var pasoFormulario = document.getElementById('paso-formulario');
 var pasoResumen = document.getElementById('paso-resumen');
 var pasoConfirmacion = document.getElementById('paso-confirmacion');
+
+function mostrarTipoDeCambio() {
+  document.getElementById('tipo-cambio').textContent =
+    '1 US$ = ' + formatoPesos.format(TIPO_DE_CAMBIO.valor) + ' · Fuente: ' + TIPO_DE_CAMBIO.fuente + ', cotización del ' + TIPO_DE_CAMBIO.fecha + '.';
+}
+
+// Pide el valor del dólar a la API. fetch hace el pedido, el primer then pasa la
+// respuesta a JSON y el segundo usa los datos para actualizar el tipo de cambio.
+function cargarCotizacion() {
+  fetch(URL_COTIZACION)
+    .then(function (respuesta) {
+      return respuesta.json();
+    })
+    .then(function (datos) {
+      // La API devuelve, entre otros datos, "venta" (el valor) y "fechaActualizacion"
+      TIPO_DE_CAMBIO.valor = datos.venta;
+      TIPO_DE_CAMBIO.fuente = 'dolarapi.com, dólar oficial, valor de venta';
+      TIPO_DE_CAMBIO.fecha = new Date(datos.fechaActualizacion).toLocaleDateString('es-AR');
+      mostrarTipoDeCambio();
+      actualizarImporte();
+    })
+    .catch(function () {
+      // Si la API falla, se queda el valor fijo de arriba
+      console.log('No se pudo obtener la cotización: se usa el valor de referencia.');
+    });
+}
 
 function hoySinHora() {
   var hoy = new Date();
@@ -221,8 +250,8 @@ function preseleccionarJornada() {
 if (formulario) {
   formulario.fecha.min = aTextoISO(hoySinHora());
   formulario.fecha.max = aTextoISO(fechaMaxima());
-  document.getElementById('tipo-cambio').textContent =
-    '1 US$ = ' + formatoPesos.format(TIPO_DE_CAMBIO.valor) + ' · Fuente: ' + TIPO_DE_CAMBIO.fuente + ', cotización del ' + TIPO_DE_CAMBIO.fecha + '.';
+  mostrarTipoDeCambio();
+  cargarCotizacion();
 
   preseleccionarJornada();
   actualizarImporte();
