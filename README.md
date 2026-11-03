@@ -50,7 +50,7 @@ y la dirección exacta se comparte con quienes se inscriben. Las coordenadas est
   paradas (ruta de navegación, recorrido 1 a 5 y anterior/siguiente).
 - **Inscripción a una jornada (`sumate.html`):** elección de jornada, fecha (solo fines de semana),
   cantidad de personas y adicionales; cálculo automático del aporte en pesos y su equivalente en
-  dólares (tipo de cambio, fuente y fecha a la vista); validación; resumen antes de confirmar y
+  dólares (tipo de cambio obtenido de una API, con fuente y fecha a la vista); validación; resumen antes de confirmar y
   confirmación con número de solicitud. **Es una simulación:** no se envían datos ni se cobra nada.
 - **Contacto (`contacto.html`):** nombre, correo, motivo y mensaje, con validación y confirmación.
   **El envío es simulado.**
@@ -76,9 +76,12 @@ y la dirección exacta se comparte con quienes se inscriben. Las coordenadas est
 | [Tailwind CSS Play CDN](https://cdn.tailwindcss.com) | Estilos |
 | [Leaflet 1.9.4](https://leafletjs.com/) (unpkg) | Mapa interactivo |
 | [OpenStreetMap](https://www.openstreetmap.org/copyright) | Mosaicos del mapa (© colaboradores de OpenStreetMap) |
+| [dolarapi.com](https://dolarapi.com/) | Cotización del dólar oficial para la conversión a pesos |
 
-El tipo de cambio del formulario de inscripción es un valor de referencia del Banco de la Nación
-Argentina (dólar oficial, venta) con su fecha, definido en `js/inscripcion.js`.
+El tipo de cambio del formulario de inscripción se obtiene al cargar la página desde la API pública
+[dolarapi.com](https://dolarapi.com/) (dólar oficial, valor de venta), y se muestra junto con su
+fuente y la fecha de actualización. Si la API no responde, el formulario usa un valor de referencia
+fijo del Banco de la Nación Argentina, con su fecha, definido en `js/inscripcion.js`.
 
 ## Estructura del proyecto
 
