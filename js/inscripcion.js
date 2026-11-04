@@ -30,10 +30,12 @@ function mostrarTipoDeCambio() {
 function cargarCotizacion() {
   fetch(URL_COTIZACION)
     .then(function (respuesta) {
+      if (!respuesta.ok) throw new Error('La API respondió con error ' + respuesta.status);
       return respuesta.json();
     })
     .then(function (datos) {
       // La API devuelve, entre otros datos, "venta" (el valor) y "fechaActualizacion"
+      if (typeof datos.venta !== 'number' || datos.venta <= 0) throw new Error('Cotización inválida');
       TIPO_DE_CAMBIO.valor = datos.venta;
       TIPO_DE_CAMBIO.fuente = 'dolarapi.com, dólar oficial, valor de venta';
       TIPO_DE_CAMBIO.fecha = new Date(datos.fechaActualizacion).toLocaleDateString('es-AR');

@@ -107,6 +107,8 @@ js/contacto.js                     Validación y confirmación del contacto
 js/preguntas.js                    Preguntas, búsqueda y filtro por tema
 img/                               Fotos propias de las jornadas
 logo.png                           Logo de TECHO
+TechoParaArgentina-Grupo6-Documento1-Diseno.pdf      Actividad 3: diseño y contenido
+TechoParaArgentina-Grupo6-Documento2-Desarrollo.pdf  Actividad 3: desarrollo e implementación
 ```
 
 ## Cómo verlo
@@ -124,7 +126,7 @@ Hace falta conexión a internet, porque Tailwind, Leaflet y el mapa se cargan de
 
 | Integrante | Contribución |
 |---|---|
-| Díaz Seoane, Agustín Edgardo | Galería "Barrios en Construcción" (Actividad 1), base del sitio, guion y fotos de la parada 1. |
+| Díaz Seoane, Agustín Edgardo | Galería "Barrios en Construcción" (Actividad 1), base del sitio, guion y fotos de la parada 1. Actividad 3: página de error 404 y metadatos para compartir el sitio en redes (Open Graph) en todas las páginas. |
 | Ferrario, Lorenzo | Guion y fotos de la parada 2 (veredas y espacio recreativo). Actividad 3: preguntas frecuentes. |
 | Calderón, Felipe | Guion y fotos de la parada 3. Actividad 3: integración de la API de cotización del dólar en la inscripción, corrección del clic perdido en el botón de envío de los formularios, ícono del sitio en todas las páginas y verificación de las fuentes de la parada 3. |
 | Fernández, Nicolás Esteban | Guion y fotos de la parada 4. Actividad 3: migración a Tailwind, mapa del recorrido, formularios de inscripción y contacto, Design System. |
